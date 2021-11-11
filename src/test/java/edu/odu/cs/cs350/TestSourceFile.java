@@ -2,8 +2,6 @@ package edu.odu.cs.cs350;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import edu.odu.cs.cs350.SourceFile;
-
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
@@ -17,7 +15,8 @@ class TestSourceFile {
 	void testConstructor() {
 		String testPath = "path/to/file";
 		SourceFile sf = new SourceFile(testPath);
-		assertEquals( sf.getPath(), testPath );
+		String realPath = "path" + SourceFile.separator + "to" + SourceFile.separator + "file";
+		assertEquals( sf.getPath(), realPath );
 	}
 	
 	/*
@@ -36,10 +35,11 @@ class TestSourceFile {
 	void testPrintPath() {
 		String testPath = "path/to/file";
 		SourceFile sf = new SourceFile(testPath);
+		String realPath = "path" + SourceFile.separator + "to" + SourceFile.separator + "file";
 		
 		sf.printPath();
 	        
-	    assertEquals( testPath, outputStreamCaptor.toString()
+	    assertEquals( realPath, outputStreamCaptor.toString()
 	      .trim() );
 	}
 	

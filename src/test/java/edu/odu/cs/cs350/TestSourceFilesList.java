@@ -1,6 +1,5 @@
 package edu.odu.cs.cs350;
 
-import static org.junit.Assert.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.io.ByteArrayOutputStream;
@@ -10,18 +9,18 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class SourceFilesTest {
+class TestSourceFilesList {
 
 	@Test
 	void testSourceFiles() {
-		SourceFiles sfs = new SourceFiles();
+		SourceFilesList sfs = new SourceFilesList();
 		assertEquals(sfs.size(), 0);
 	}
 
 	@Test
 	void testSourceFilesStringArray() {
 		String str[] = {"a", "b", "c"};
-		SourceFiles sfs = new SourceFiles(str);
+		SourceFilesList sfs = new SourceFilesList(str);
 		assertEquals(sfs.get(0).getPath(), "a");
 		assertEquals(sfs.get(1).getPath(), "b");
 		assertEquals(sfs.get(2).getPath(), "c");
@@ -29,7 +28,7 @@ class SourceFilesTest {
 
 	@Test
 	void testAdd() {
-		SourceFiles sfs = new SourceFiles();
+		SourceFilesList sfs = new SourceFilesList();
 		sfs.add("abc");
 		assertEquals(sfs.size(), 1);
 		assertEquals(sfs.get(0).getPath(), "abc");
@@ -38,7 +37,7 @@ class SourceFilesTest {
 	@Test
 	void testRemove() {
 		String str[] = {"a", "b", "c"};
-		SourceFiles sfs = new SourceFiles(str);
+		SourceFilesList sfs = new SourceFilesList(str);
 		sfs.remove(0);
 		assertEquals(sfs.get(0).getPath(), "b");
 		assertEquals(sfs.get(1).getPath(), "c");
@@ -52,7 +51,7 @@ class SourceFilesTest {
 
 	@Test
 	void testSize() {
-		SourceFiles sfs = new SourceFiles();
+		SourceFilesList sfs = new SourceFilesList();
 		assertEquals(sfs.size(), 0);
 		sfs.add("a");
 		assertEquals(sfs.size(), 1);
@@ -63,7 +62,7 @@ class SourceFilesTest {
 
 	@Test
 	void testGet() {
-		SourceFiles sfs = new SourceFiles();
+		SourceFilesList sfs = new SourceFilesList();
 		sfs.add("a");
 		assertEquals(sfs.get(0).getPath(), "a");
 		sfs.add("b");
@@ -75,9 +74,9 @@ class SourceFilesTest {
 	@Test
 	void testSort() {
 		String str[] = {"a", "b", "c"};
-		SourceFiles sorted = new SourceFiles(str);
+		SourceFilesList sorted = new SourceFilesList(str);
 		String str2[] = {"b", "a", "c"};
-		SourceFiles unsorted = new SourceFiles(str2);
+		SourceFilesList unsorted = new SourceFilesList(str2);
 		assertNotEquals(sorted, unsorted);
 		unsorted.sort();
 		assertEquals(sorted, unsorted);
@@ -99,7 +98,7 @@ class SourceFilesTest {
 	@Test
 	void testPrintFiles() {
 		String str[] = {"a", "b", "c"};
-		SourceFiles sfs = new SourceFiles(str);
+		SourceFilesList sfs = new SourceFilesList(str);
 		
 		sfs.printFiles();
 		String output = outputStreamCaptor.toString().trim();
@@ -124,15 +123,15 @@ class SourceFilesTest {
 	
 	@Test
 	void testEquals() {
-		SourceFiles sf1 = new SourceFiles();
-		SourceFiles sf2 = new SourceFiles();
+		SourceFilesList sf1 = new SourceFilesList();
+		SourceFilesList sf2 = new SourceFilesList();
 		assertEquals(sf1, sf2);
 		
 		String str[] = {"a", "b", "c"};
-		SourceFiles sorted = new SourceFiles(str);
-		SourceFiles sorted1 = new SourceFiles(str);
+		SourceFilesList sorted = new SourceFilesList(str);
+		SourceFilesList sorted1 = new SourceFilesList(str);
 		String str2[] = {"b", "a", "c"};
-		SourceFiles unsorted = new SourceFiles(str2);
+		SourceFilesList unsorted = new SourceFilesList(str2);
 		assertNotEquals(sorted, unsorted);
 		assertEquals(sorted, sorted1);
 	}
