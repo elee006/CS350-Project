@@ -1,5 +1,6 @@
 package edu.odu.cs.cs350;
 
+import java.nio.file.NoSuchFileException;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -14,12 +15,28 @@ public class SourceFilesList extends ArrayList<SourceFile>
 	}
 	
 	/*
-	 * Create an ArrayList with an array of paths
+	 * Create an ArrayList with an array of paths, without checking to see if they exist
 	 */
 	public SourceFilesList( String[] str ) {
 		for (String s: str) {
+	    	add(s);
+	    }
+	}
+	
+	/*
+	 * Create an ArrayList with an array of paths, checking to see if they exist if b = true
+	 */
+	public SourceFilesList( String[] str, boolean b ) throws NoSuchFileException {
+		for (String s: str) {
         	add(s);
         }
+		if (b == true) {
+			for ( SourceFile source : this )
+	        {
+	        	if (!source.exists())
+	        		throw new NoSuchFileException(source.getPath());
+	        }
+		}
 	}
 	
 	/*
