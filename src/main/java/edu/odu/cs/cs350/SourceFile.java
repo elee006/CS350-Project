@@ -1,6 +1,7 @@
 package edu.odu.cs.cs350;
 
 import java.io.File;
+import java.util.ArrayList;
 
 public class SourceFile extends File
 {
@@ -22,5 +23,13 @@ public class SourceFile extends File
 	{
 		System.out.println(getPath());	
 	}
+	
+//	public boolean checkExtension( ArrayList<String> extensions ) {
+//		for ( String str: extensions ) {
+//			if ()
+//		}
+//	}
+	
+//	public boolean checkExtension( String extensions )
 	
 }

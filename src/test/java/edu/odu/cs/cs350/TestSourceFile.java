@@ -65,4 +65,21 @@ class TestSourceFile {
 		assertEquals( sf1.compareTo(sf3), testPath1.compareTo(testPath3) );
 		assertEquals( sf2.compareTo(sf3), testPath2.compareTo(testPath3) );
 	}
+	
+	@Test
+	void testCheckExtensionString() {
+		String testExt = ".ini";
+		String testCh = "a";
+		String testEmpty = "";
+		SourceFile sf1 = new SourceFile("a.ini");
+		SourceFile sf2 = new SourceFile("a");
+		
+		assertTrue( sf1.checkExtension(testExt) );
+		assertTrue( !sf1.checkExtension(testCh) );
+		assertTrue( sf1.checkExtension(testEmpty) );
+		
+		assertTrue( !sf2.checkExtension(testExt) );
+		assertTrue( sf2.checkExtension(testCh) );
+		assertTrue( sf2.checkExtension(testEmpty) );
+	}
 }

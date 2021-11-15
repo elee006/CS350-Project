@@ -40,6 +40,25 @@ public class SourceFilesList extends ArrayList<SourceFile>
 	}
 	
 	/*
+	 * Create an ArrayList with an array of paths, checking to see if they exist and match the file extensions present in extensions
+	 */
+//	public SourceFilesList( String[] str, ArrayList<String> extensions ) throws NoSuchFileException {
+//		for (String s: str) {
+//        	add(s);
+//        }
+//		for ( SourceFile source : this )
+//        {
+//        	if (!source.exists())
+//        		throw new NoSuchFileException(source.getPath());
+//        	else {
+//        		for ( String ext: extensions ) {
+//        			
+//        		}
+//        	}
+//        }
+//	}
+	
+	/*
 	 * Add a single path
 	 */
 	public void add( String s ) {

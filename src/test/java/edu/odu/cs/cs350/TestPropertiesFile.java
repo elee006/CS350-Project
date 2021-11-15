@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-class PropertiesFileTest {
+class TestPropertiesFile {
 	
 	/*
 	 * Following code taken from https://www.baeldung.com/junit-assert-exception
