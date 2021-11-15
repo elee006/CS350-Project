@@ -88,8 +88,9 @@ class TestSourceFile {
 	void testCheckExtensionArrayList() {
 		ArrayList<String> str = new ArrayList<String>();
 		SourceFile sf1 = new SourceFile("a.ini");
+		System.out.println(sf1.getName());
 		
-		assertTrue( sf1.checkExtension(str) );
+		assertTrue( !sf1.checkExtension(str) );
 		str.add("a");
 		assertTrue( !sf1.checkExtension(str) );
 		str.add(".cpp");

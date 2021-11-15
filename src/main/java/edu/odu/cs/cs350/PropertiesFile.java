@@ -64,7 +64,9 @@ public class PropertiesFile {
 	}
 
 	public static void main(String[] args) {
-		handleArguments(args);
+		//handleArguments(args);
+		SourceFile sf = new SourceFile("a.ini");
+		System.out.println(sf.getName());
 	}
 	
 }

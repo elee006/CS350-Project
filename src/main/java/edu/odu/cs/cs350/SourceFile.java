@@ -24,11 +24,13 @@ public class SourceFile extends File
 		System.out.println(getPath());	
 	}
 	
-//	public boolean checkExtension( ArrayList<String> extensions ) {
-//		for ( String str: extensions ) {
-//			if ()
-//		}
-//	}
+	public boolean checkExtension( ArrayList<String> extensions ) {
+		for ( String str: extensions ) {
+			if ( checkExtension(str) )
+				return true;
+		}
+		return false;
+	}
 	
 	public boolean checkExtension( String extension ) {
 		if ( getName().length() >= extension.length() ) {
