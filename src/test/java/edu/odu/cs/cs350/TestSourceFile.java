@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+import java.util.ArrayList;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -81,5 +82,19 @@ class TestSourceFile {
 		assertTrue( !sf2.checkExtension(testExt) );
 		assertTrue( sf2.checkExtension(testCh) );
 		assertTrue( sf2.checkExtension(testEmpty) );
+	}
+	
+	@Test
+	void testCheckExtensionArrayList() {
+		ArrayList<String> str = new ArrayList<String>();
+		SourceFile sf1 = new SourceFile("a.ini");
+		
+		assertTrue( sf1.checkExtension(str) );
+		str.add("a");
+		assertTrue( !sf1.checkExtension(str) );
+		str.add(".cpp");
+		assertTrue( !sf1.checkExtension(str) );
+		str.add(".ini");
+		assertTrue( sf1.checkExtension(str) );
 	}
 }
