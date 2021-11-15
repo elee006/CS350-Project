@@ -3,7 +3,11 @@ package edu.odu.cs.cs350;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.IOException;
 import java.io.PrintStream;
+import java.nio.file.NoSuchFileException;
+import java.util.ArrayList;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -134,6 +138,43 @@ class TestSourceFilesList {
 		SourceFilesList unsorted = new SourceFilesList(str2);
 		assertNotEquals(sorted, unsorted);
 		assertEquals(sorted, sorted1);
+	}
+	
+	@Test
+	void testConstructorWithArrayList() throws NoSuchFileException {
+		SourceFilesList sf1 = new SourceFilesList();
+		String g1 = "adsffadsfdsfds6589393.txt";
+		String g2 = "dkclvbjnxqoiewruyy.ini";
+		File f1 = new File(g1);
+		File f2 = new File(g2);
+		
+		if ( !f1.exists() ) {
+			try {
+				assertTrue(f1.createNewFile());
+			} catch (IOException e) {
+				assertTrue(false);
+			}
+		}
+		
+		if ( !f2.exists() ) {
+			try {
+				assertTrue(f2.createNewFile());
+			} catch (IOException e) {
+				assertTrue(false);
+			}
+		}
+		
+		String paths[] = {g1, g2};
+		
+		ArrayList<String> als = new ArrayList<String>();
+		als.add(".ini"); als.add(".txt");
+		
+		sf1.add(g1); sf1.add(g2);
+		SourceFilesList sf2 = new SourceFilesList(paths, als);
+		
+		assertEquals( sf1, sf2 );
+		assertTrue(f1.delete());
+		assertTrue(f2.delete());
 	}
 
 }
