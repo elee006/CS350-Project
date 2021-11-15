@@ -29,3 +29,11 @@ hs_err_pid*
 .classpath
 /build/
 build/tmp/compileJava/source-classes-mapping.txt
+.github/
+gradle/
+src/
+README.md
+build.gradle
+gradlew
+gradlew.bat
+settings.gradle
