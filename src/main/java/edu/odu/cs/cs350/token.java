@@ -7,16 +7,51 @@ public class token {
     private String lexeme;
     private int column_num;
     private int line_num;
+    private TokenTypes type;
 
-    public void Token(String lexeme, int column_num, int line_num){
-        this.lexeme = lexeme;
-        this.column_num = column_num;
-        this.line_num = line_num;
+
+    public void Token(TokenTypes theType, int line, int column)
+    {
+        type = theType;
+        lexeme = "";
+        line_num = line;
+        column_num = column;
+
+    }
+    public void Token(String thelexeme, int column, int line, TokenTypes theType){
+        type = theType;
+        column_num = column;
+        line = line_num;
+        lexeme = thelexeme;
+
     }
 
-    public int NumofTokens(File inputFile) throws FileNotFoundException{
+    public int NumofTokens() {
         int TokenCount = 0;
+        while (getLexeme().length() < 0)
+        {
+            TokenCount++;
+        }
         return TokenCount;
     }
+
+    public final TokenTypes getType() {
+        return type;
+    }
+
+    public final String getLexeme(){
+        return lexeme;
+    }
+
+    public int getLineNum(){
+        return line_num;
+    }
+
+    public int getColumnNum(){
+        return column_num;
+    }
+
+
+
 
 }
