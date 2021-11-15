@@ -2,8 +2,14 @@ package edu.odu.cs.cs350;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.io.BufferedWriter;
 import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.io.PrintStream;
+import java.io.RandomAccessFile;
 import java.util.ArrayList;
 
 import org.junit.jupiter.api.AfterEach;
@@ -98,4 +104,26 @@ class TestSourceFile {
 		str.add(".ini");
 		assertTrue( sf1.checkExtension(str) );
 	}
-}
+	
+	// Following adapted from https://www.baeldung.com/java-append-to-file
+	
+//	@Test
+//	void testGetLength() throws IOException {
+//		SourceFile sf = new SourceFile("myFile");
+//		assertEquals( sf.length(), 0 );
+//		
+//		if (!sf.createNewFile())
+//		{
+//			sf.delete();
+//			sf.createNewFile();
+//		}
+//		
+//		FileWriter fw = new FileWriter(sf, true);
+//	    BufferedWriter bw = new BufferedWriter(fw);
+//	    bw.write("11111111");
+//	    
+//	    assertEquals( sf.length(), 8 );
+//	    
+//	    sf.delete();
+//	}
+//}
