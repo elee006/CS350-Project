@@ -1,6 +1,7 @@
 plugins {
     id 'java'
     id 'application'
+	id "org.xbib.gradle.plugin.git" version "2.0.0"
 }
 
 java {
@@ -24,3 +25,51 @@ test {
 }
 
 mainClassName = 'edu.odu.cs.cs350.PropertiesFile'
+
+//Following taken from https://www.cs.odu.edu/~zeil/cs350/latest/Public/websiteDeployment/index.html
+
+javadoc {              
+   failOnError = false;
+}
+
+task reports (dependsOn: ['javadoc', 'test']) {
+	description 'Generate reports for the project website'
+}
+
+task clonePages(dependsOn: 'reports') {                                             
+    doLast {
+        mkdir 'build/gh-pages'
+        def thisRepo = rootProject.projectDir.toString()
+        def pagesDir = "$buildDir/gh-pages"
+        project.delete {
+            delete pagesDir
+        }
+        def grgit = git.clone {
+            dir = pagesDir
+            uri = 'file:' + thisRepo
+            bare = false
+            refToCheckout = 'gh-pages'
+        }
+        grgit.checkout {
+			branch = 'gh-pages'
+		}
+    }
+}
+task deployReports (dependsOn: 'clonePages') {
+	group = "Reporting"
+    description  'Copies reports to the gh-pages branch in preparation for a future push to GitHub'
+    doLast {
+        def pagesDir = "$buildDir/gh-pages"
+        def grgit = git.open {
+            dir = pagesDir + "/.git"
+        }
+        grgit.add (update: false, patterns: ['reports/'])
+        grgit.add (update: true, patterns: ['reports/'])
+		grgit.add (update: false, patterns: ['docs/'])
+        grgit.add (update: true, patterns: ['docs/'])
+        grgit.commit {
+            message = "Updating web pages"
+        }
+        grgit.push{}
+    }
+}
