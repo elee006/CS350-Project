@@ -30,6 +30,13 @@ public class SourceFile extends File
 //		}
 //	}
 	
-//	public boolean checkExtension( String extensions )
+	public boolean checkExtension( String extension ) {
+		if ( getName().length() >= extension.length() ) {
+			if ( getName().substring( getName().length() - extension.length(), getName().length() ).equals(extension) )
+				return true;
+		}
+		
+		return false;
+	}
 	
 }
