@@ -1,80 +1,34 @@
 package edu.odu.cs.cs350;
 import java.io.File;
+import java.io.FilenameFilter;
 
-
-
-//Take a Directory 
-public class DirectoryPath
+//Takes a given Directory and prints out files (also prints sub directories.) 
+public class DirectoryPath 
 {
- //@param Directory name entered by the user  
-String directoryName;
+ //Directory name entered by the user  
+String dirName;
  // File object referring to the directory.
-File directory;        
+File dir;        
  // Array of file names in the directory.
 String[] files; 
-
-    public DirectoryPath(String directoryName){
-            directory = new File(directoryName.trim());
-    }
-    public String[] setDirFiles(){
-    return files = directory.list();
-    }
-
+    public DirectoryPath(String dirName){
+        File dir = new File(dirName.trim());
+            // dir = new File(dirName.trim());
+            File[] files = dir.listFiles(new FilenameFilter() {
+                @Override
+                public boolean accept(File dir, String name) {
+                    
+                    return name.endsWith(".cpp");
+                }
+            });
+            // files = directory.list(); 
+        }
     public void printDirFiles(){
         for (int i = 0; i < files.length; i++)
         System.out.println("   " + files[i]);
     }
-
     public int numofFiles(){
         return files.length;
     }
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// public  class DirectoryPathList {
-//     //Source: https://math.hws.edu/javanotes/source/chapter11/DirectoryList.java
-    
-//             // Directory name entered by the user.
-//             private String directoryName;  
-//             // File object referring to the directory.
-//             private File directory;        
-//             // Array of file names in the directory.
-//             private String[] files;        
-
-
-//             public DirectoryPathList(){
-
-//             }
-
-       
-
-//        public String getDirectory(){
-//            return directoryName.trim();
-//        }
-
-//        public void Directory(String d){
-//            directoryName = d;
-//     }
-
-//        public String[] Flie(){}
-
-//             directoryName = scanner.nextLine().trim();
-//             directory = new File(directoryName);
-//                 if (directory.exists() == false)
-//                     System.out.println("This directory does not exist...");
-//             else {
-//                 return files = directory.list();
-//     }
-//     }
