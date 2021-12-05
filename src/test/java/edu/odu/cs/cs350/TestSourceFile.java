@@ -104,26 +104,4 @@ class TestSourceFile {
 		str.add(".ini");
 		assertTrue( sf1.checkExtension(str) );
 	}
-	
-	// Following adapted from https://www.baeldung.com/java-append-to-file
-	
-//	@Test
-//	void testGetLength() throws IOException {
-//		SourceFile sf = new SourceFile("myFile");
-//		assertEquals( sf.length(), 0 );
-//		
-//		if (!sf.createNewFile())
-//		{
-//			sf.delete();
-//			sf.createNewFile();
-//		}
-//		
-//		FileWriter fw = new FileWriter(sf, true);
-//	    BufferedWriter bw = new BufferedWriter(fw);
-//	    bw.write("11111111");
-//	    
-//	    assertEquals( sf.length(), 8 );
-//	    
-//	    sf.delete();
-//	}
 }
