@@ -1,6 +1,7 @@
 package edu.odu.cs.cs350;
 
 import java.io.File;
+import java.io.IOException;
 import java.nio.file.NoSuchFileException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -42,7 +43,7 @@ public class PropertiesFile {
 	    }
 		
 		// Check if there is a properties file. If there is, add it. Specifically, checks if the last 3 characters are .ini, which checks
-		// that the extension is .ini. Index also increases by 1 to account for that argument being the properties file and not something to analyze.
+		// that the extension is .ini. pos of first file also increases by 1 to account for that argument being the properties file and not something to analyze.
 		if ( args[1].substring( args[1].length() - 4, args[1].length() ).equals(".ini") ) {
 			propFile = new File(args[1]);
 			positionOfFirstFile = 2;
@@ -61,12 +62,14 @@ public class PropertiesFile {
 		}
 		 
 		// NOTE: This works, it's just really annoying to have to make real files.
+		
+		filesList.sort();
+		filesList.printFiles();
 	}
 
 	public static void main(String[] args) {
-		//handleArguments(args);
-		SourceFile sf = new SourceFile("a.ini");
-		System.out.println(sf.getName());
+		handleArguments(args);
+		
 	}
 	
 }
