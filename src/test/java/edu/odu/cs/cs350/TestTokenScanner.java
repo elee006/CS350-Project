@@ -4,7 +4,7 @@ package edu.odu.cs.cs350;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.io.*
+import java.io.*;
 
 
 import org.junit.jupiter.api.Test;
@@ -18,6 +18,7 @@ public class TestTokenScanner{
     @Test 
     public void testScanner(){
         File file = new File("C:\\CS350-Project\\test.txt");
+        /*
         BufferedReader br = new BufferedReader(new FileReader(file));
         String inputString = null;
 
@@ -27,7 +28,7 @@ public class TestTokenScanner{
         TokenStream ts = new TokenStream(input);
         ArrayList<token> tokens = new ArrayList<token>();
         
-
+*/
 
 
 

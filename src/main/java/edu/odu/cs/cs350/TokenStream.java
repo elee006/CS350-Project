@@ -13,7 +13,7 @@ public class TokenStream implements Iterable<token>{
 
     public TokenStream(final Reader input){
         tokens = new LinkedList<token>();
-        GeneratedScanner scanner = newGeneratedScanner (input);
+        GeneratedScanner scanner = new GeneratedScanner (input);
         try {
             token token = scanner.yylex();
             while (token != null && token.getType() != TokenTypes.EOF) {

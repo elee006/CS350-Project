@@ -13,17 +13,17 @@ package edu.odu.cs.cs350;
 %line 
 %column
 
-%type Token 
+%type token 
 
 %{
   StringBuilder string = new StringBuilder();
   
-  private Token symbol(TokenTypes type) {
-    return new Token(type, yyline+1, yycolumn+1);
+  private token symbol(TokenTypes type) {
+    return new token(type, yyline+1, yycolumn+1);
   }
 
-  private Token symbol(TokenTypes type, String value) {
-    return new Token(type, yyline+1, yycolumn+1, value);
+  private token symbol(TokenTypes type, String value) {
+    return new token(type, yyline+1, yycolumn+1, value);
   }
 
 %}
@@ -40,8 +40,13 @@ IntegerLiteral = [0-9][0-9]* | [0-9][_0-9]*[0-9]
 %%
 
 
-  {IntegerLiteral}            { return symbol(TokenKinds.INTEGER_LITERAL, yytext()); }
+  {IntegerLiteral}            { return symbol(TokenTypes.INTEGER_LITERAL, yytext()); }
 
-  {Identifier}                   { return symbol(TokenKinds.IDENTIFIER, yytext()); } 
+  {Identifier}                   { return symbol(TokenTypes.IDENTIFIER, yytext()); } 
   
 {WhiteSpace}                  {/* Ignore: don't return anything. */} 
+
+/* error fallback */
+[^]                              { throw new RuntimeException("Illegal character \""+yytext()+
+                                            "\" at line "+yyline+", column "+yycolumn); }
+<<EOF>>                          { return symbol(TokenTypes.EOF); }

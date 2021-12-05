@@ -10,7 +10,7 @@ public class token {
     private TokenTypes type;
 
 
-    public void Token(TokenTypes theType, int line, int column)
+    public token(final TokenTypes theType,final int line,final int column)
     {
         type = theType;
         lexeme = "";
@@ -18,10 +18,10 @@ public class token {
         column_num = column;
 
     }
-    public void Token(String thelexeme, int column, int line, TokenTypes theType){
+    public token(final TokenTypes theType,final int line,final int column,final String thelexeme){
         type = theType;
         column_num = column;
-        line = line_num;
+        line_num = line;
         lexeme = thelexeme;
 
     }
