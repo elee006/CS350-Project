@@ -1,7 +1,7 @@
 package edu.odu.cs.cs350;
-//@SuprpressWarnings("unused")
+//@SupressWarnings("unused")
 
-%%
+
 /**
 *https://git.cs.odu.edu/zeil/jflexdemo/-/blob/master/src/main/jflex/demo.jflex
 */
@@ -36,6 +36,9 @@ WhiteSpace     = {LineTerminator} | [ \t\f]
 
 Identifier = [:jletter:][:jletterdigit:]*
 IntegerLiteral = [0-9][0-9]* | [0-9][_0-9]*[0-9]
+
+%%
+
 
   {IntegerLiteral}            { return symbol(TokenKinds.INTEGER_LITERAL, yytext()); }
 
