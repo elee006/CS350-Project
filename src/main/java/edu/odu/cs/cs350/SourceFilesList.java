@@ -66,6 +66,28 @@ public class SourceFilesList extends ArrayList<SourceFile>
 				add(source);
     	}
 	}
+
+		/*
+	 * Add a single path, and if the file is a directory, add all files and directories it contains.
+	 */
+	public void addRecursive( String path, ArrayList<String> extensions ) throws NoSuchFileException {
+		SourceFile fileToAdd = new SourceFile(path);
+		if( !fileToAdd.isDirectory() ) {
+			try {
+				add(path, extensions);
+			} catch (NoSuchFileException e) {
+				throw new NoSuchFileException(fileToAdd.getPath());
+			}
+		}
+		else {
+			String[] filesList = fileToAdd.list();
+			for( String file: filesList ) {
+				file = fileToAdd.getPath() + SourceFile.separator + file;
+				addRecursive( file, extensions );
+			}
+		}
+	}
+
 	
 	/*
 	 * Add a single path
