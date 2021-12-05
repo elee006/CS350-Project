@@ -1,5 +1,6 @@
 package edu.odu.cs.cs350;
 
+import java.io.File;
 import java.nio.file.NoSuchFileException;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -44,19 +45,26 @@ public class SourceFilesList extends ArrayList<SourceFile>
 	 */
 	public SourceFilesList( String[] path, ArrayList<String> extensions ) throws NoSuchFileException {
 		for (String s: path) {
-        	add(s);
+        	File f1 = new File(s);
+        	if( !f1.isDirectory() )
+        		add(s);
+        	else
+        		addRecursive(s, extensions);
         }
-		for ( SourceFile source : this )
-        {
-        	if (!source.exists())
-        		throw new NoSuchFileException(source.getPath());
-        	else {
-        		for ( String ext: extensions ) {
-        			if ( !source.checkExtension(extensions) )
-        				remove(source);
-        		}
-        	}
-        }
+	}
+	
+	/*
+	 * Add a single path if it ends in an extension contained in the ArrayList extensions
+	 */	
+	public void add( String path, ArrayList<String> extensions ) throws NoSuchFileException {
+		SourceFile source = new SourceFile(path);
+		
+		if (!source.exists())
+    		throw new NoSuchFileException(source.getPath());
+    	else {
+			if ( source.checkExtension(extensions) )
+				add(source);
+    	}
 	}
 	
 	/*
@@ -65,6 +73,8 @@ public class SourceFilesList extends ArrayList<SourceFile>
 	public void add( String s ) {
 		add( new SourceFile(s) );
 	}
+	
+	
 	
 	// Sort into ascending order
 	public void sort() {

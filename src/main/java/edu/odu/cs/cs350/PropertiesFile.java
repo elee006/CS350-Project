@@ -55,7 +55,7 @@ public class PropertiesFile {
 		
 		// Try adding the rest of the files
 		try { 
-			filesList = new SourceFilesList( Arrays.copyOfRange( args, positionOfFirstFile, args.length ), true ); 
+			filesList = new SourceFilesList( Arrays.copyOfRange( args, positionOfFirstFile, args.length ), fileExtensions ); 
 		} catch (NoSuchFileException nfe) { 
 			System.out.println("Valid argument order: (number of suggested refactorings) (optional properties file) (files/directories to examine)"); 
 			throw new IllegalArgumentException("One or more argument files did not exist."); 

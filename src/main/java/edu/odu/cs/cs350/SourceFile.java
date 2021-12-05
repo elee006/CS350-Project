@@ -11,7 +11,6 @@ public class SourceFile extends File
 	 */
 	public SourceFile( String p )
 	{
-		//path = p;
 		super(p);
 	}
 	
@@ -24,6 +23,9 @@ public class SourceFile extends File
 		System.out.println(getPath());	
 	}
 	
+	/*
+	 * Returns true if this SourceFile has an extension contained in the ArrayList extensions
+	 */
 	public boolean checkExtension( ArrayList<String> extensions ) {
 		for ( String str: extensions ) {
 			if ( checkExtension(str) )
@@ -32,9 +34,12 @@ public class SourceFile extends File
 		return false;
 	}
 	
+	/*
+	 * Returns true if this SourceFile ends in the extension in extension
+	 */
 	public boolean checkExtension( String extension ) {
 		if ( getName().length() >= extension.length() ) {
-			if ( getName().substring( getName().length() - extension.length(), getName().length() ).equals(extension) )
+			if ( getName().endsWith( extension ) )
 				return true;
 		}
 		

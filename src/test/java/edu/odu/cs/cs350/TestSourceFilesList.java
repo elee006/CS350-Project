@@ -176,5 +176,94 @@ class TestSourceFilesList {
 		assertTrue(f1.delete());
 		assertTrue(f2.delete());
 	}
+	
+	@Test
+	void testAddWithExtensions() {
+		SourceFilesList sf1 = new SourceFilesList();
+		String g1 = "adsffadsfdsfds6589393.txt";
+		File f1 = new File(g1);
+		
+		if ( !f1.exists() ) {
+			try {
+				assertTrue(f1.createNewFile());
+			} catch (IOException e) {
+				assertTrue(false);
+			}
+		}
+		
+		sf1.add(g1);
+		SourceFilesList sf2 = new SourceFilesList();
+		
+		ArrayList<String> extensions = new ArrayList<String>();
+		extensions.add(".ini");
+		try {
+			sf2.add(g1, extensions);
+		} catch (NoSuchFileException e) {
+			assertTrue(false);
+		}
+		
+		assertNotEquals( sf1, sf2 );
+		
+		extensions.add(".txt");
+		
+		try {
+			sf2.add(g1, extensions);
+		} catch (NoSuchFileException e) {
+			assertTrue(false);
+		}
+		
+		assertEquals( sf1, sf2 );
+		assertTrue(f1.delete());
+	}
 
+	@Test
+	void testAddRecursive() {
+		SourceFilesList sf1 = new SourceFilesList();
+		SourceFilesList sf2 = new SourceFilesList();
+		SourceFilesList sf3 = new SourceFilesList();
+		assertEquals( sf1.size(), 0 );
+		assertEquals( sf2.size(), 0 );
+		
+		String directory = "adsffadsfdsfds6589393";
+		String file = directory + SourceFile.separator + "dkclvbjnxqoiewruyy.cpp";
+		File f1 = new File(directory);
+		f1.mkdir();
+		File f2 = new File(file);
+		try {
+			f2.createNewFile();
+		} catch (IOException e) {
+			assertTrue(false);
+		}
+		
+		ArrayList<String> ext = new ArrayList<String>();
+		
+		try {
+			sf1.addRecursive(directory, ext);
+		} catch (NoSuchFileException e) {
+			assertTrue(false);
+		}
+		
+		sf2.add(directory);
+		sf2.add(file);
+		
+		sf3.add(file);
+		
+		assertNotEquals( sf1, sf2 );
+		
+		ext.add(".cpp");
+		
+		try {
+			sf1.addRecursive(directory, ext);
+		} catch (NoSuchFileException e) {
+			assertTrue(false);
+		}
+		
+		assertNotEquals(sf1, sf2);
+		assertEquals(sf1, sf3);
+		
+		assertTrue(f2.delete());
+		assertTrue(f1.delete());
+
+	}
+	
 }
