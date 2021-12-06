@@ -106,7 +106,7 @@ spotbugsMain {
        xml.enabled = false
        html.enabled = true
     }
-	reportsDir = file("$buildDir/spotbugs")
+	reportsDir = file("$buildDir/reports/spotbugs")
 }
 
 spotbugsTest.enabled = false
