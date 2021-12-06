@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>TokenStream.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">CS350-Project</a> &gt; <a href="index.source.html" class="el_package">edu.odu.cs.cs350</a> &gt; <span class="el_source">TokenStream.java</span></div><h1>TokenStream.java</h1><pre class="source lang-java linenums">package edu.odu.cs.cs350;
+/**
+ * https://git.cs.odu.edu/zeil/jflexdemo/-/blob/master/src/main/java/edu/odu/cs/cs350/jflexdemo/TokenStream.java
+ */
+import java.util.Scanner;
+import java.io.*;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
+
+public class TokenStream implements Iterable&lt;token&gt;{
+    private List&lt;token&gt; tokens;
+
+<span class="nc" id="L14">    public TokenStream(final Reader input){</span>
+<span class="nc" id="L15">        tokens = new LinkedList&lt;token&gt;();</span>
+<span class="nc" id="L16">        GeneratedScanner scanner = new GeneratedScanner (input);</span>
+        try {
+<span class="nc" id="L18">            token token = scanner.yylex();</span>
+<span class="nc bnc" id="L19" title="All 4 branches missed.">            while (token != null &amp;&amp; token.getType() != TokenTypes.EOF) {</span>
+<span class="nc" id="L20">                tokens.add (token);</span>
+<span class="nc" id="L21">                token = scanner.yylex();</span>
+            }
+<span class="nc" id="L23">        } catch (IOException ex) {</span>
+            // Not necessarily a problem, depending on the input source
+<span class="nc" id="L25">        }</span>
+
+
+<span class="nc" id="L28">    }</span>
+    @Override
+    public final Iterator&lt;token&gt; iterator() {
+<span class="nc" id="L31">        return tokens.iterator();</span>
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

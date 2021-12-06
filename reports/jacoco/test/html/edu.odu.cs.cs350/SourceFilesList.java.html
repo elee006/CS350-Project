@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>SourceFilesList.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">CS350-Project</a> &gt; <a href="index.source.html" class="el_package">edu.odu.cs.cs350</a> &gt; <span class="el_source">SourceFilesList.java</span></div><h1>SourceFilesList.java</h1><pre class="source lang-java linenums">package edu.odu.cs.cs350;
+
+import java.io.File;
+import java.nio.file.NoSuchFileException;
+import java.util.ArrayList;
+import java.util.Collections;
+
+
+public class SourceFilesList extends ArrayList&lt;SourceFile&gt;
+{	
+	/*
+	 * Create an empty ArrayList of SourceFile s
+	 */
+<span class="fc" id="L14">	public SourceFilesList() {</span>
+		
+<span class="fc" id="L16">	}</span>
+	
+	/*
+	 * Create an ArrayList with an array of paths, without checking to see if they exist
+	 */
+<span class="fc" id="L21">	public SourceFilesList( String[] str ) {</span>
+<span class="fc bfc" id="L22" title="All 2 branches covered.">		for (String s: str) {</span>
+<span class="fc" id="L23">	    	add(s);</span>
+	    }
+<span class="fc" id="L25">	}</span>
+	
+	/*
+	 * Create an ArrayList with an array of paths, checking to see if they exist if b = true
+	 */
+<span class="nc" id="L30">	public SourceFilesList( String[] str, boolean b ) throws NoSuchFileException {</span>
+<span class="nc bnc" id="L31" title="All 2 branches missed.">		for (String s: str) {</span>
+<span class="nc" id="L32">        	add(s);</span>
+        }
+<span class="nc bnc" id="L34" title="All 2 branches missed.">		if (b == true) {</span>
+<span class="nc bnc" id="L35" title="All 2 branches missed.">			for ( SourceFile source : this )</span>
+	        {
+<span class="nc bnc" id="L37" title="All 2 branches missed.">	        	if (!source.exists())</span>
+<span class="nc" id="L38">	        		throw new NoSuchFileException(source.getPath());</span>
+<span class="nc" id="L39">	        }</span>
+		}
+<span class="nc" id="L41">	}</span>
+	
+	/*
+	 * Create an ArrayList with an array of paths, checking to see if they exist and match the file extensions present in extensions
+	 */
+<span class="fc" id="L46">	public SourceFilesList( String[] path, ArrayList&lt;String&gt; extensions ) throws NoSuchFileException {</span>
+<span class="fc bfc" id="L47" title="All 2 branches covered.">		for (String s: path) {</span>
+<span class="fc" id="L48">        	File f1 = new File(s);</span>
+<span class="pc bpc" id="L49" title="1 of 2 branches missed.">        	if( !f1.isDirectory() )</span>
+<span class="fc" id="L50">        		add(s);</span>
+        	else
+<span class="nc" id="L52">        		addRecursive(s, extensions);</span>
+        }
+<span class="fc" id="L54">	}</span>
+	
+	/*
+	 * Add a single path if it ends in an extension contained in the ArrayList extensions
+	 */	
+	public void add( String path, ArrayList&lt;String&gt; extensions ) throws NoSuchFileException {
+<span class="fc" id="L60">		SourceFile source = new SourceFile(path);</span>
+		
+<span class="pc bpc" id="L62" title="1 of 2 branches missed.">		if (!source.exists())</span>
+<span class="nc" id="L63">    		throw new NoSuchFileException(source.getPath());</span>
+    	else {
+<span class="fc bfc" id="L65" title="All 2 branches covered.">			if ( source.checkExtension(extensions) )</span>
+<span class="fc" id="L66">				add(source);</span>
+    	}
+<span class="fc" id="L68">	}</span>
+
+		/*
+	 * Add a single path, and if the file is a directory, add all files and directories it contains.
+	 */
+	public void addRecursive( String path, ArrayList&lt;String&gt; extensions ) throws NoSuchFileException {
+<span class="fc" id="L74">		SourceFile fileToAdd = new SourceFile(path);</span>
+<span class="fc bfc" id="L75" title="All 2 branches covered.">		if( !fileToAdd.isDirectory() ) {</span>
+			try {
+<span class="fc" id="L77">				add(path, extensions);</span>
+<span class="nc" id="L78">			} catch (NoSuchFileException e) {</span>
+<span class="nc" id="L79">				throw new NoSuchFileException(fileToAdd.getPath());</span>
+<span class="fc" id="L80">			}</span>
+		}
+		else {
+<span class="fc" id="L83">			String[] filesList = fileToAdd.list();</span>
+<span class="fc bfc" id="L84" title="All 2 branches covered.">			for( String file: filesList ) {</span>
+<span class="fc" id="L85">				file = fileToAdd.getPath() + SourceFile.separator + file;</span>
+<span class="fc" id="L86">				addRecursive( file, extensions );</span>
+			}
+		}
+<span class="fc" id="L89">	}</span>
+
+	
+	/*
+	 * Add a single path
+	 */
+	public void add( String s ) {
+<span class="fc" id="L96">		add( new SourceFile(s) );</span>
+<span class="fc" id="L97">	}</span>
+	
+	
+	
+	// Sort into ascending order
+	public void sort() {
+<span class="fc" id="L103">		Collections.sort(this);</span>
+<span class="fc" id="L104">	}</span>
+	
+	// Print the file paths
+	public void printFiles() {
+<span class="fc bfc" id="L108" title="All 2 branches covered.">		for ( SourceFile source : this )</span>
+        {
+<span class="fc" id="L110">        	source.printPath();</span>
+<span class="fc" id="L111">        }</span>
+<span class="fc" id="L112">	}</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>
