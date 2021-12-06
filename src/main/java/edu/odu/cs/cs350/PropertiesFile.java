@@ -1,10 +1,13 @@
 package edu.odu.cs.cs350;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.NoSuchFileException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Scanner;
+import java.util.regex.Pattern;
 
 public class PropertiesFile {
 	
@@ -80,10 +83,6 @@ public class PropertiesFile {
 			System.out.println("One or more argument files did not exist when trying to print.");
 			throw new IllegalArgumentException("One or more argument files did not exist.");
 		}
-		
-		for ( SourceFile source : filesList ) {
-			System.out.println( source.getPath() );
-		}
 	}
 	
 	/**
@@ -92,7 +91,7 @@ public class PropertiesFile {
 	 */
 	public static void main(String[] args) {
 		handleArguments(args);
-		
+
 	}
 	
 }
