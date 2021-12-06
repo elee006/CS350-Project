@@ -13,9 +13,19 @@ java {
     targetCompatibility = JavaVersion.toVersion(11)
 }
 
+
+// Taken from https://stackoverflow.com/questions/21721119/creating-runnable-jar-with-gradle
+
+jar{
+	manifest {
+		attributes 'Main-Class': 'edu.odu.cs.cs350.PropertiesFile'
+	}
+}
+
 repositories {
     jcenter()
 }
+
 sourceSets {
   main {
      jflex {
