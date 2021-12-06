@@ -64,7 +64,12 @@ public class PropertiesFile {
 		// NOTE: This works, it's just really annoying to have to make real files.
 		
 		filesList.sort();
-		filesList.printFiles();
+		try {
+			filesList.printFiles();
+		} catch (IOException e) {
+			System.out.println("One or more argument files did not exist.");
+			throw new IllegalArgumentException("One or more argument files did not exist.");
+		}
 	}
 
 	public static void main(String[] args) {

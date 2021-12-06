@@ -104,7 +104,11 @@ class TestSourceFilesList {
 		String str[] = {"a", "b", "c"};
 		SourceFilesList sfs = new SourceFilesList(str);
 		
-		sfs.printFiles();
+		try {
+			sfs.printFiles();
+		} catch (IOException e) {
+			assertTrue(false);
+		}
 		String output = outputStreamCaptor.toString().trim();
 		System.setOut(new PrintStream(outputStreamCaptor1));
 		System.out.println("a");

@@ -1,6 +1,7 @@
 package edu.odu.cs.cs350;
 
 import java.io.File;
+import java.io.IOException;
 import java.nio.file.NoSuchFileException;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -104,7 +105,7 @@ public class SourceFilesList extends ArrayList<SourceFile>
 	}
 	
 	// Print the file paths
-	public void printFiles() {
+	public void printFiles() throws IOException {
 		for ( SourceFile source : this )
         {
         	source.printPath();

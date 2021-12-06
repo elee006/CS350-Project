@@ -1,6 +1,7 @@
 package edu.odu.cs.cs350;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class SourceFile extends File
@@ -18,9 +19,9 @@ public class SourceFile extends File
 	/*
 	 * Prints the absolute path of the file to the console
 	 */
-	public void printPath()
+	public void printPath() throws IOException
 	{
-		System.out.println(getPath());	
+		System.out.print(getCanonicalPath());	
 	}
 	
 	/*

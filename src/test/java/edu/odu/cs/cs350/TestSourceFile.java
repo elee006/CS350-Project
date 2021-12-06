@@ -42,9 +42,19 @@ class TestSourceFile {
 	void testPrintPath() {
 		String testPath = "path/to/file";
 		SourceFile sf = new SourceFile(testPath);
-		String realPath = "path" + SourceFile.separator + "to" + SourceFile.separator + "file";
+		File testFile = new File(testPath);
+		String realPath = "";
+		try {
+			realPath = testFile.getCanonicalPath();
+		} catch (IOException e) {
+			assertTrue(false);
+		}
 		
-		sf.printPath();
+		try {
+			sf.printPath();
+		} catch (IOException e) {
+			assertTrue(false);
+		}
 	        
 	    assertEquals( realPath, outputStreamCaptor.toString()
 	      .trim() );
