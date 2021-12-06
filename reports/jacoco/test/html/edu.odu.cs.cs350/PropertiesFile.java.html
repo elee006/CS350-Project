@@ -64,13 +64,18 @@ import java.util.Arrays;
 		// NOTE: This works, it's just really annoying to have to make real files.
 		
 <span class="nc" id="L66">		filesList.sort();</span>
-<span class="nc" id="L67">		filesList.printFiles();</span>
-<span class="nc" id="L68">	}</span>
+		try {
+<span class="nc" id="L68">			filesList.printFiles();</span>
+<span class="nc" id="L69">		} catch (IOException e) {</span>
+<span class="nc" id="L70">			System.out.println(&quot;One or more argument files did not exist.&quot;);</span>
+<span class="nc" id="L71">			throw new IllegalArgumentException(&quot;One or more argument files did not exist.&quot;);</span>
+<span class="nc" id="L72">		}</span>
+<span class="nc" id="L73">	}</span>
 
 	public static void main(String[] args) {
-<span class="nc" id="L71">		handleArguments(args);</span>
+<span class="nc" id="L76">		handleArguments(args);</span>
 		
-<span class="nc" id="L73">	}</span>
+<span class="nc" id="L78">	}</span>
 	
 }
 
