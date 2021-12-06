@@ -46,7 +46,7 @@ javadoc {
    failOnError = false;
 }
 
-task reports (dependsOn: ['javadoc', 'test', 'spotbugsMain', 'jacocoTestReport', 'reportStats']) {
+task reports (dependsOn: ['javadoc', 'test', 'spotbugsMain', 'jacocoTestReport']) {
 	description 'Generate reports for the project website'
 }
 
