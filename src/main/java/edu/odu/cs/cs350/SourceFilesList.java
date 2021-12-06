@@ -27,25 +27,6 @@ public class SourceFilesList extends ArrayList<SourceFile>
 	}
 	
 	/**
-	 * Create an ArrayList with an array of paths, checking to see if they exist if b = true
-	 * @param srt The array of paths to construct the SourceFiles
-	 * @param b The boolean to determine whether or not to check if the files exist
-	 * @throws NoSuchFileException
-	 */
-	public SourceFilesList( String[] str, boolean b ) throws NoSuchFileException {
-		for (String s: str) {
-        	add(s);
-        }
-		if (b == true) {
-			for ( SourceFile source : this )
-	        {
-	        	if (!source.exists())
-	        		throw new NoSuchFileException(source.getPath());
-	        }
-		}
-	}
-	
-	/**
 	 * Create an ArrayList with an array of paths, checking to see if they exist and adding files found in
 	 * directories if they match the file extensions present in extensions.
 	 * This is used primarily to call addRecursive on directories and add on normal files specified directly,
