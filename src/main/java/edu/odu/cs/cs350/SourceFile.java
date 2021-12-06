@@ -26,6 +26,7 @@ public class SourceFile extends File
 	
 	/**
 	 * Returns true if this SourceFile has an extension contained in the ArrayList extensions
+	 * @param extensions The extensions to check
 	 */
 	public boolean checkExtension( ArrayList<String> extensions ) {
 		for ( String str: extensions ) {
@@ -37,6 +38,7 @@ public class SourceFile extends File
 	
 	/**
 	 * Returns true if this SourceFile ends in the extension in extension
+	 * @param extension The extension to check
 	 */
 	public boolean checkExtension( String extension ) {
 		if ( getName().length() >= extension.length() ) {
