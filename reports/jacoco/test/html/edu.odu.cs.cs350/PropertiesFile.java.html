@@ -77,19 +77,23 @@ import java.util.Arrays;
 		try {
 <span class="nc" id="L78">			filesList.printFiles();</span>
 <span class="nc" id="L79">		} catch (IOException e) {</span>
-<span class="nc" id="L80">			System.out.println(&quot;One or more argument files did not exist.&quot;);</span>
+<span class="nc" id="L80">			System.out.println(&quot;One or more argument files did not exist when trying to print.&quot;);</span>
 <span class="nc" id="L81">			throw new IllegalArgumentException(&quot;One or more argument files did not exist.&quot;);</span>
 <span class="nc" id="L82">		}</span>
-<span class="nc" id="L83">	}</span>
+		
+<span class="nc bnc" id="L84" title="All 2 branches missed.">		for ( SourceFile source : filesList ) {</span>
+<span class="nc" id="L85">			System.out.println( source.getPath() );</span>
+<span class="nc" id="L86">		}</span>
+<span class="nc" id="L87">	}</span>
 	
 	/**
 	 * Calls handleArguments to do the heavy lifting.
 	 * @param args the arguments to the program
 	 */
 	public static void main(String[] args) {
-<span class="nc" id="L90">		handleArguments(args);</span>
+<span class="nc" id="L94">		handleArguments(args);</span>
 		
-<span class="nc" id="L92">	}</span>
+<span class="nc" id="L96">	}</span>
 	
 }
 

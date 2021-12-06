@@ -131,7 +131,7 @@ public class SourceFilesList extends ArrayList&lt;SourceFile&gt;
 	public void printFiles() throws IOException {
 <span class="fc bfc" id="L132" title="All 2 branches covered.">		for ( SourceFile source : this )</span>
         {
-<span class="fc" id="L134">        	source.printPath();</span>
+<span class="fc" id="L134">        	System.out.println(source.getCanonicalPath());</span>
 <span class="fc" id="L135">        }</span>
 <span class="fc" id="L136">	}</span>
 }
