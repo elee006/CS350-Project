@@ -21,3 +21,16 @@ jobs:
     - name: Build and test the plugin             
       timeout-minutes: 20
       run: ./gradlew build
+    - name: Generate reports 
+      run: ./gradlew reports
+    - name: Make the directory for gh-pages branch #Not needed?
+      run: mkdir -p build/gh-pages
+    - name: Go into the build directory
+      run: 'cd build/; cp -r ./docs/ ./gh-pages/; cp -r ./reports/ ./gh-pages/; cp -r ./spotbugs/ ./gh-pages/; wget -O ./gh-pages/index.md https://raw.githubusercontent.com/elee006/CS350-Project/gh-pages/index.md; '
+    - name: Deploy
+      uses: s0/git-publish-subdir-action@develop #https://github.com/s0/git-publish-subdir-action
+      env:
+        REPO: self
+        BRANCH: gh-pages
+        FOLDER: build/gh-pages
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

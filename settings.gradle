@@ -1,1 +1,10 @@
-// A basic java project 
+// Report accumulator from https://github.com/sjzeil/report_accumulator
+pluginManagement {
+    repositories {
+        ivy { // Use my own CS dept repo
+            url 'https://www.cs.odu.edu/~zeil/ivyrepo'
+        }
+        gradlePluginPortal()
+        mavenCentral()
+    }
+}
