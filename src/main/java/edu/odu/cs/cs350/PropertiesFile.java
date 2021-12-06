@@ -8,11 +8,21 @@ import java.util.Arrays;
 
 public class PropertiesFile {
 	
-	// Default number of suggestions to print
+	/**
+	 * Default number of suggestions to print
+	 */
 	static int nSuggestions;
-	// Optional properties file
+
+	/**
+	 * Optional properties file
+	 */
 	static File propFile;
 	
+	/**
+	 * Checks the arguments to see if they are valid and then constructs a SourceFileList using the specified
+	 * files, finally sorting and printing the collection.
+	 * @param args The arguments obtained from the command line
+	 */
 	public static void handleArguments(String[] args) {
 		// Container for the files to be used
 		SourceFilesList filesList;
@@ -64,9 +74,18 @@ public class PropertiesFile {
 		// NOTE: This works, it's just really annoying to have to make real files.
 		
 		filesList.sort();
-		filesList.printFiles();
+		try {
+			filesList.printFiles();
+		} catch (IOException e) {
+			System.out.println("One or more argument files did not exist.");
+			throw new IllegalArgumentException("One or more argument files did not exist.");
+		}
 	}
-
+	
+	/**
+	 * Calls handleArguments to do the heavy lifting.
+	 * @param args the arguments to the program
+	 */
 	public static void main(String[] args) {
 		handleArguments(args);
 		

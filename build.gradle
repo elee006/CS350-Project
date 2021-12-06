@@ -106,11 +106,11 @@ spotbugsMain {
        xml.enabled = false
        html.enabled = true
     }
-	reportsDir = file("$buildDir/spotbugs")
+	reportsDir = file("$buildDir/reports/spotbugs")
 }
 
 spotbugsTest.enabled = false
 
 reportStats {
-    reportsURL = 'https://elee006.github.io/CS350-Project/'
+    reportsURL = 'https://elee006.github.io/CS350-Project/reports/'
 }

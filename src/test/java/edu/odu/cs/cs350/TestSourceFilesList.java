@@ -103,13 +103,34 @@ class TestSourceFilesList {
 	void testPrintFiles() {
 		String str[] = {"a", "b", "c"};
 		SourceFilesList sfs = new SourceFilesList(str);
+		File fa = new File("a");
+		File fb = new File("b");
+		File fc = new File("c");
 		
-		sfs.printFiles();
+		try {
+			sfs.printFiles();
+		} catch (IOException e) {
+			assertTrue(false);
+		}
 		String output = outputStreamCaptor.toString().trim();
 		System.setOut(new PrintStream(outputStreamCaptor1));
-		System.out.println("a");
-		System.out.println("b");
-		System.out.println("c");
+		
+		try {
+			System.out.print(fa.getCanonicalPath());
+		} catch (IOException e) {
+			assertTrue(false);
+		}
+		try {
+			System.out.print(fb.getCanonicalPath());
+		} catch (IOException e) {
+			assertTrue(false);
+		}
+		try {
+			System.out.print(fc.getCanonicalPath());
+		} catch (IOException e) {
+			assertTrue(false);
+		}
+		
 		String output1 = outputStreamCaptor1.toString().trim();
 		
 		assertEquals(output, output1);
