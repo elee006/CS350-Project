@@ -131,6 +131,9 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <hr>
 <pre>public class <span class="typeNameLabel">token</span>
 extends java.lang.Object</pre>
+<div class="block">Token Class that stores the token type, the lexeme,
+ and the location
+ contains code from https://git.cs.odu.edu/zeil/jflexdemo/-/blob/master/src/main/java/edu/odu/cs/cs350/jflexdemo/Token.java</div>
 </li>
 </ul>
 </div>
@@ -154,14 +157,18 @@ extends java.lang.Object</pre>
 <th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(edu.odu.cs.cs350.TokenTypes,int,int)">token</a></span>&#8203;(<a href="TokenTypes.html" title="enum in edu.odu.cs.cs350">TokenTypes</a>&nbsp;theType,
      int&nbsp;line,
      int&nbsp;column)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Create a token without an explicit lexeme.</div>
+</td>
 </tr>
 <tr class="rowColor">
 <th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(edu.odu.cs.cs350.TokenTypes,int,int,java.lang.String)">token</a></span>&#8203;(<a href="TokenTypes.html" title="enum in edu.odu.cs.cs350">TokenTypes</a>&nbsp;theType,
      int&nbsp;line,
      int&nbsp;column,
      java.lang.String&nbsp;thelexeme)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Create a token.</div>
+</td>
 </tr>
 </table>
 </li>
@@ -189,7 +196,9 @@ extends java.lang.Object</pre>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>java.lang.String</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getLexeme()">getLexeme</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Finds the character string that goes with the token</div>
+</td>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>int</code></td>
@@ -199,12 +208,16 @@ extends java.lang.Object</pre>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code><a href="TokenTypes.html" title="enum in edu.odu.cs.cs350">TokenTypes</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getType()">getType</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Finds the type of token</div>
+</td>
 </tr>
 <tr id="i4" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#NumofTokens()">NumofTokens</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Finds the total number of tokens</div>
+</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -239,6 +252,13 @@ extends java.lang.Object</pre>
 <pre>public&nbsp;token&#8203;(<a href="TokenTypes.html" title="enum in edu.odu.cs.cs350">TokenTypes</a>&nbsp;theType,
              int&nbsp;line,
              int&nbsp;column)</pre>
+<div class="block">Create a token without an explicit lexeme.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>theType</code> - </dd>
+<dd><code>line</code> - </dd>
+<dd><code>column</code> - </dd>
+</dl>
 </li>
 </ul>
 <a id="&lt;init&gt;(edu.odu.cs.cs350.TokenTypes,int,int,java.lang.String)">
@@ -251,6 +271,14 @@ extends java.lang.Object</pre>
              int&nbsp;line,
              int&nbsp;column,
              java.lang.String&nbsp;thelexeme)</pre>
+<div class="block">Create a token.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>theType</code> - </dd>
+<dd><code>line</code> - </dd>
+<dd><code>column</code> - </dd>
+<dd><code>thelexeme</code> - </dd>
+</dl>
 </li>
 </ul>
 </li>
@@ -270,6 +298,7 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>NumofTokens</h4>
 <pre class="methodSignature">public&nbsp;int&nbsp;NumofTokens()</pre>
+<div class="block">Finds the total number of tokens</div>
 </li>
 </ul>
 <a id="getType()">
@@ -279,6 +308,11 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>getType</h4>
 <pre class="methodSignature">public final&nbsp;<a href="TokenTypes.html" title="enum in edu.odu.cs.cs350">TokenTypes</a>&nbsp;getType()</pre>
+<div class="block">Finds the type of token</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>theType</dd>
+</dl>
 </li>
 </ul>
 <a id="getLexeme()">
@@ -288,6 +322,11 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>getLexeme</h4>
 <pre class="methodSignature">public final&nbsp;java.lang.String&nbsp;getLexeme()</pre>
+<div class="block">Finds the character string that goes with the token</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>lexeme</dd>
+</dl>
 </li>
 </ul>
 <a id="getLineNum()">
@@ -297,6 +336,10 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>getLineNum</h4>
 <pre class="methodSignature">public&nbsp;int&nbsp;getLineNum()</pre>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the line number</dd>
+</dl>
 </li>
 </ul>
 <a id="getColumnNum()">
@@ -306,6 +349,10 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>getColumnNum</h4>
 <pre class="methodSignature">public&nbsp;int&nbsp;getColumnNum()</pre>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the line number</dd>
+</dl>
 </li>
 </ul>
 </li>

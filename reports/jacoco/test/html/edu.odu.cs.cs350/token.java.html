@@ -3,52 +3,93 @@ import java.util.Scanner;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+/**
+ * Token Class that stores the token type, the lexeme,
+ * and the location
+ * contains code from https://git.cs.odu.edu/zeil/jflexdemo/-/blob/master/src/main/java/edu/odu/cs/cs350/jflexdemo/Token.java
+ */
 public class token {
+    /**
+     * For variables, literals, and operators
+     */
     private String lexeme;
+    /**
+     * Where is is located in the file?
+     */
     private int column_num;
+    /**
+     * Where is it located in the file?
+     */
     private int line_num;
+    /**
+     * What type of token is this?
+     */
     private TokenTypes type;
 
-
+/**
+ * Create a token without an explicit lexeme.
+ * @param theType
+ * @param line
+ * @param column
+ */
     public token(final TokenTypes theType,final int line,final int column)
-<span class="fc" id="L14">    {</span>
-<span class="fc" id="L15">        type = theType;</span>
-<span class="fc" id="L16">        lexeme = &quot;&quot;;</span>
-<span class="fc" id="L17">        line_num = line;</span>
-<span class="fc" id="L18">        column_num = column;</span>
+<span class="fc" id="L36">    {</span>
+<span class="fc" id="L37">        type = theType;</span>
+<span class="fc" id="L38">        lexeme = &quot;&quot;;</span>
+<span class="fc" id="L39">        line_num = line;</span>
+<span class="fc" id="L40">        column_num = column;</span>
 
-<span class="fc" id="L20">    }</span>
-<span class="fc" id="L21">    public token(final TokenTypes theType,final int line,final int column,final String thelexeme){</span>
-<span class="fc" id="L22">        type = theType;</span>
-<span class="fc" id="L23">        column_num = column;</span>
-<span class="fc" id="L24">        line_num = line;</span>
-<span class="fc" id="L25">        lexeme = thelexeme;</span>
+<span class="fc" id="L42">    }</span>
+    /**
+     * Create a token.
+     * @param theType
+     * @param line
+     * @param column
+     * @param thelexeme
+     */
+<span class="fc" id="L50">    public token(final TokenTypes theType,final int line,final int column,final String thelexeme){</span>
+<span class="fc" id="L51">        type = theType;</span>
+<span class="fc" id="L52">        column_num = column;</span>
+<span class="fc" id="L53">        line_num = line;</span>
+<span class="fc" id="L54">        lexeme = thelexeme;</span>
 
-<span class="fc" id="L27">    }</span>
-
+<span class="fc" id="L56">    }</span>
+    /**
+     * Finds the total number of tokens
+     */
     public int NumofTokens() {
-<span class="nc" id="L30">        int TokenCount = 0;</span>
-<span class="nc bnc" id="L31" title="All 2 branches missed.">        while (getLexeme().length() &lt; 0)</span>
+<span class="nc" id="L61">        int TokenCount = 0;</span>
+<span class="nc bnc" id="L62" title="All 2 branches missed.">        while (getLexeme().length() &lt; 0)</span>
         {
-<span class="nc" id="L33">            TokenCount++;</span>
+<span class="nc" id="L64">            TokenCount++;</span>
         }
-<span class="nc" id="L35">        return TokenCount;</span>
+<span class="nc" id="L66">        return TokenCount;</span>
     }
-
+/**
+ * Finds the type of token
+ * @return theType
+ */
     public final TokenTypes getType() {
-<span class="fc" id="L39">        return type;</span>
+<span class="fc" id="L73">        return type;</span>
     }
-
+/**
+ * Finds the character string that goes with the token
+ * @return lexeme
+ */
     public final String getLexeme(){
-<span class="nc" id="L43">        return lexeme;</span>
+<span class="nc" id="L80">        return lexeme;</span>
     }
-
+/**
+ * @return the line number
+ */
     public int getLineNum(){
-<span class="nc" id="L47">        return line_num;</span>
+<span class="nc" id="L86">        return line_num;</span>
     }
-
+/**
+ * @return the line number
+ */
     public int getColumnNum(){
-<span class="nc" id="L51">        return column_num;</span>
+<span class="nc" id="L92">        return column_num;</span>
     }
 
 
