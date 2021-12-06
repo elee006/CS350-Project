@@ -1,6 +1,6 @@
 package edu.odu.cs.cs350;
 /**
- * https://git.cs.odu.edu/zeil/jflexdemo/-/blob/master/src/main/java/edu/odu/cs/cs350/jflexdemo/TokenStream.java
+ * contains code from https://git.cs.odu.edu/zeil/jflexdemo/-/blob/master/src/main/java/edu/odu/cs/cs350/jflexdemo/TokenStream.java
  */
 import java.util.Scanner;
 import java.io.*;
@@ -21,7 +21,6 @@ public class TokenStream implements Iterable<token>{
                 token = scanner.yylex();
             }
         } catch (IOException ex) {
-            // Not necessarily a problem, depending on the input source
         }
 
 

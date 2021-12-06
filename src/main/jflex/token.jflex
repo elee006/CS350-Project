@@ -43,6 +43,11 @@ IntegerLiteral = [0-9][0-9]* | [0-9][_0-9]*[0-9]
   {IntegerLiteral}            { return symbol(TokenTypes.INTEGER_LITERAL, yytext()); }
 
   {Identifier}                   { return symbol(TokenTypes.IDENTIFIER, yytext()); } 
+
+        /* operators */
+      "="                            { return symbol(TokenTypes.EQ); }
+      "=="                           { return symbol(TokenTypes.EQEQ); }
+      "+"                            { return symbol(TokenTypes.PLUS); }
   
 {WhiteSpace}                  {/* Ignore: don't return anything. */} 
 

@@ -20,9 +20,9 @@ public class TestTokenScanner{
 
         
        /* BufferedReader br = new BufferedReader(new FileReader(file));*/
-        String inputString = "int a 3";
+        String inputString = "int a = 3";
 
-  /*inputString = br.readLine();*/
+    /*inputString = br.readLine();*/
          
 
         Reader input = new StringReader(inputString);
@@ -33,10 +33,14 @@ public class TestTokenScanner{
             tokens.add(tok);
 
         }
-        assertEquals (3, tokens.size());
+        assertEquals (4, tokens.size());
 
         token t = tokens.get(0);
         assertEquals (TokenTypes.IDENTIFIER, t.getType());
+        
+        t = tokens.get(2);
+        assertEquals (TokenTypes.EQ, t.getType());
+
 
 
         
