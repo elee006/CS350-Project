@@ -73,10 +73,8 @@
       <p>SpotBugs version: 4.1.1</p>
       <p>Code analyzed:</p>
       <ul>
-         <li>/home/runner/work/CS350-Project/CS350-Project/build/classes/java/main/edu/odu/cs/cs350/DirectoryPath.class</li>
          <li>/home/runner/work/CS350-Project/CS350-Project/build/classes/java/main/edu/odu/cs/cs350/TokenStream.class</li>
          <li>/home/runner/work/CS350-Project/CS350-Project/build/classes/java/main/edu/odu/cs/cs350/SourceFile.class</li>
-         <li>/home/runner/work/CS350-Project/CS350-Project/build/classes/java/main/edu/odu/cs/cs350/DirectoryPath$1.class</li>
          <li>/home/runner/work/CS350-Project/CS350-Project/build/classes/java/main/edu/odu/cs/cs350/PropertiesFile.class</li>
          <li>/home/runner/work/CS350-Project/CS350-Project/build/classes/java/main/edu/odu/cs/cs350/SourceFilesList.class</li>
          <li>/home/runner/work/CS350-Project/CS350-Project/build/classes/java/main/edu/odu/cs/cs350/GeneratedScanner.class</li>
@@ -88,8 +86,8 @@
          <br/>
       </p>
       <h2>Metrics</h2>
-      <p>516 lines of code analyzed,
-	in 9 classes, 
+      <p>495 lines of code analyzed,
+	in 7 classes, 
 	in 1 packages.</p>
       <table width="500" cellpadding="5" cellspacing="2">
          <tr class="tableheader">
@@ -99,23 +97,23 @@
          </tr>
          <tr class="tablerow0">
             <td>High Priority Warnings</td>
-            <td align="right">1</td>
-            <td align="right">1.94</td>
+            <td align="right"/>
+            <td align="right">0.00</td>
          </tr>
          <tr class="tablerow1">
             <td>Medium Priority Warnings</td>
-            <td align="right">18</td>
-            <td align="right">34.88</td>
+            <td align="right">13</td>
+            <td align="right">26.26</td>
          </tr>
          <tr class="$totalClass">
             <td>
                <b>Total Warnings</b>
             </td>
             <td align="right">
-               <b>19</b>
+               <b>13</b>
             </td>
             <td align="right">
-               <b>36.82</b>
+               <b>26.26</b>
             </td>
          </tr>
       </table>
@@ -130,9 +128,6 @@
       <ul>
          <li>
             <a href="#Warnings_BAD_PRACTICE">Bad practice Warnings</a>
-         </li>
-         <li>
-            <a href="#Warnings_CORRECTNESS">Correctness Warnings</a>
          </li>
          <li>
             <a href="#Warnings_PERFORMANCE">Performance Warnings</a>
@@ -158,28 +153,22 @@
          </tr>
          <tr class="tablerow1">
             <td>
-               <a href="#Warnings_CORRECTNESS">Correctness Warnings</a>
-            </td>
-            <td align="right">3</td>
-         </tr>
-         <tr class="tablerow0">
-            <td>
                <a href="#Warnings_PERFORMANCE">Performance Warnings</a>
             </td>
-            <td align="right">6</td>
+            <td align="right">4</td>
          </tr>
-         <tr class="tablerow1">
+         <tr class="tablerow0">
             <td>
                <a href="#Warnings_STYLE">Dodgy code Warnings</a>
             </td>
-            <td align="right">8</td>
+            <td align="right">7</td>
          </tr>
-         <tr class="tablerow0">
+         <tr class="tablerow1">
             <td>
                <b>Total</b>
             </td>
             <td align="right">
-               <b>19</b>
+               <b>13</b>
             </td>
          </tr>
       </table>
@@ -193,7 +182,7 @@
             <th align="left">Code</th>
             <th align="left">Warning</th>
          </tr>
-         <tr class="tablerow1" onclick="toggleRow('d1e285');">
+         <tr class="tablerow1" onclick="toggleRow('d1e190');">
             <td>
                <span class="priority-2">Nm</span>
             </td>
@@ -202,12 +191,12 @@
          <tr class="detailrow1">
             <td/>
             <td>
-               <p id="d1e285" style="display: none;">
+               <p id="d1e190" style="display: none;">
                   <a href="#NM_CLASS_NAMING_CONVENTION">Bug type NM_CLASS_NAMING_CONVENTION (click for details)</a>
                   <br/>In class edu.odu.cs.cs350.token<br/>At token.java:[lines 14-51]</p>
             </td>
          </tr>
-         <tr class="tablerow0" onclick="toggleRow('d1e294');">
+         <tr class="tablerow0" onclick="toggleRow('d1e199');">
             <td>
                <span class="priority-2">Nm</span>
             </td>
@@ -216,60 +205,9 @@
          <tr class="detailrow0">
             <td/>
             <td>
-               <p id="d1e294" style="display: none;">
+               <p id="d1e199" style="display: none;">
                   <a href="#NM_METHOD_NAMING_CONVENTION">Bug type NM_METHOD_NAMING_CONVENTION (click for details)</a>
                   <br/>In class edu.odu.cs.cs350.token<br/>In method edu.odu.cs.cs350.token.NumofTokens()<br/>At token.java:[lines 30-35]</p>
-            </td>
-         </tr>
-      </table>
-      <h2>
-         <a name="Warnings_CORRECTNESS">Correctness Warnings</a>
-      </h2>
-      <table class="warningtable" width="100%" cellspacing="0">
-         <tr class="tableheader">
-            <th align="left">Code</th>
-            <th align="left">Warning</th>
-         </tr>
-         <tr class="tablerow1" onclick="toggleRow('d1e37');">
-            <td>
-               <span class="priority-2">NP</span>
-            </td>
-            <td>Read of unwritten field files in edu.odu.cs.cs350.DirectoryPath.numofFiles()</td>
-         </tr>
-         <tr class="detailrow1">
-            <td/>
-            <td>
-               <p id="d1e37" style="display: none;">
-                  <a href="#NP_UNWRITTEN_FIELD">Bug type NP_UNWRITTEN_FIELD (click for details)</a>
-                  <br/>In class edu.odu.cs.cs350.DirectoryPath<br/>In method edu.odu.cs.cs350.DirectoryPath.numofFiles()<br/>Field edu.odu.cs.cs350.DirectoryPath.files<br/>At DirectoryPath.java:[line 31]</p>
-            </td>
-         </tr>
-         <tr class="tablerow0" onclick="toggleRow('d1e53');">
-            <td>
-               <span class="priority-2">NP</span>
-            </td>
-            <td>Read of unwritten field files in edu.odu.cs.cs350.DirectoryPath.printDirFiles()</td>
-         </tr>
-         <tr class="detailrow0">
-            <td/>
-            <td>
-               <p id="d1e53" style="display: none;">
-                  <a href="#NP_UNWRITTEN_FIELD">Bug type NP_UNWRITTEN_FIELD (click for details)</a>
-                  <br/>In class edu.odu.cs.cs350.DirectoryPath<br/>In method edu.odu.cs.cs350.DirectoryPath.printDirFiles()<br/>Field edu.odu.cs.cs350.DirectoryPath.files<br/>At DirectoryPath.java:[line 27]</p>
-            </td>
-         </tr>
-         <tr class="tablerow1" onclick="toggleRow('d1e95');">
-            <td>
-               <span class="priority-2">UwF</span>
-            </td>
-            <td>Unwritten field: edu.odu.cs.cs350.DirectoryPath.files</td>
-         </tr>
-         <tr class="detailrow1">
-            <td/>
-            <td>
-               <p id="d1e95" style="display: none;">
-                  <a href="#UWF_UNWRITTEN_FIELD">Bug type UWF_UNWRITTEN_FIELD (click for details)</a>
-                  <br/>In class edu.odu.cs.cs350.DirectoryPath<br/>Field edu.odu.cs.cs350.DirectoryPath.files<br/>At DirectoryPath.java:[line 27]</p>
             </td>
          </tr>
       </table>
@@ -281,7 +219,7 @@
             <th align="left">Code</th>
             <th align="left">Warning</th>
          </tr>
-         <tr class="tablerow1" onclick="toggleRow('d1e217');">
+         <tr class="tablerow1" onclick="toggleRow('d1e121');">
             <td>
                <span class="priority-2">UrF</span>
             </td>
@@ -290,12 +228,12 @@
          <tr class="detailrow1">
             <td/>
             <td>
-               <p id="d1e217" style="display: none;">
+               <p id="d1e121" style="display: none;">
                   <a href="#URF_UNREAD_FIELD">Bug type URF_UNREAD_FIELD (click for details)</a>
                   <br/>In class edu.odu.cs.cs350.GeneratedScanner<br/>Field edu.odu.cs.cs350.GeneratedScanner.string<br/>At GeneratedScanner.java:[line 504]</p>
             </td>
          </tr>
-         <tr class="tablerow0" onclick="toggleRow('d1e230');">
+         <tr class="tablerow0" onclick="toggleRow('d1e134');">
             <td>
                <span class="priority-2">UrF</span>
             </td>
@@ -304,12 +242,12 @@
          <tr class="detailrow0">
             <td/>
             <td>
-               <p id="d1e230" style="display: none;">
+               <p id="d1e134" style="display: none;">
                   <a href="#URF_UNREAD_FIELD">Bug type URF_UNREAD_FIELD (click for details)</a>
                   <br/>In class edu.odu.cs.cs350.GeneratedScanner<br/>Field edu.odu.cs.cs350.GeneratedScanner.yychar<br/>At GeneratedScanner.java:[line 649]</p>
             </td>
          </tr>
-         <tr class="tablerow1" onclick="toggleRow('d1e243');">
+         <tr class="tablerow1" onclick="toggleRow('d1e147');">
             <td>
                <span class="priority-2">UrF</span>
             </td>
@@ -318,12 +256,12 @@
          <tr class="detailrow1">
             <td/>
             <td>
-               <p id="d1e243" style="display: none;">
+               <p id="d1e147" style="display: none;">
                   <a href="#URF_UNREAD_FIELD">Bug type URF_UNREAD_FIELD (click for details)</a>
                   <br/>In class edu.odu.cs.cs350.GeneratedScanner<br/>Field edu.odu.cs.cs350.GeneratedScanner.zzAtBOL<br/>At GeneratedScanner.java:[line 496]</p>
             </td>
          </tr>
-         <tr class="tablerow0" onclick="toggleRow('d1e256');">
+         <tr class="tablerow0" onclick="toggleRow('d1e160');">
             <td>
                <span class="priority-2">UrF</span>
             </td>
@@ -332,37 +270,9 @@
          <tr class="detailrow0">
             <td/>
             <td>
-               <p id="d1e256" style="display: none;">
+               <p id="d1e160" style="display: none;">
                   <a href="#URF_UNREAD_FIELD">Bug type URF_UNREAD_FIELD (click for details)</a>
                   <br/>In class edu.odu.cs.cs350.GeneratedScanner<br/>Field edu.odu.cs.cs350.GeneratedScanner.zzEOFDone<br/>At GeneratedScanner.java:[line 628]</p>
-            </td>
-         </tr>
-         <tr class="tablerow1" onclick="toggleRow('d1e69');">
-            <td>
-               <span class="priority-2">UuF</span>
-            </td>
-            <td>Unused field: edu.odu.cs.cs350.DirectoryPath.dir</td>
-         </tr>
-         <tr class="detailrow1">
-            <td/>
-            <td>
-               <p id="d1e69" style="display: none;">
-                  <a href="#UUF_UNUSED_FIELD">Bug type UUF_UNUSED_FIELD (click for details)</a>
-                  <br/>In class edu.odu.cs.cs350.DirectoryPath<br/>Field edu.odu.cs.cs350.DirectoryPath.dir<br/>In DirectoryPath.java</p>
-            </td>
-         </tr>
-         <tr class="tablerow0" onclick="toggleRow('d1e82');">
-            <td>
-               <span class="priority-2">UuF</span>
-            </td>
-            <td>Unused field: edu.odu.cs.cs350.DirectoryPath.dirName</td>
-         </tr>
-         <tr class="detailrow0">
-            <td/>
-            <td>
-               <p id="d1e82" style="display: none;">
-                  <a href="#UUF_UNUSED_FIELD">Bug type UUF_UNUSED_FIELD (click for details)</a>
-                  <br/>In class edu.odu.cs.cs350.DirectoryPath<br/>Field edu.odu.cs.cs350.DirectoryPath.dirName<br/>In DirectoryPath.java</p>
             </td>
          </tr>
       </table>
@@ -374,114 +284,100 @@
             <th align="left">Code</th>
             <th align="left">Warning</th>
          </tr>
-         <tr class="tablerow1" onclick="toggleRow('d1e16');">
-            <td>
-               <span class="priority-1">DLS</span>
-            </td>
-            <td>Dead store to files rather than field with same name in new edu.odu.cs.cs350.DirectoryPath(String)</td>
-         </tr>
-         <tr class="detailrow1">
-            <td/>
-            <td>
-               <p id="d1e16" style="display: none;">
-                  <a href="#DLS_DEAD_LOCAL_STORE_SHADOWS_FIELD">Bug type DLS_DEAD_LOCAL_STORE_SHADOWS_FIELD (click for details)</a>
-                  <br/>In class edu.odu.cs.cs350.DirectoryPath<br/>In method new edu.odu.cs.cs350.DirectoryPath(String)<br/>Local variable named files<br/>Did you mean to refer to the field edu.odu.cs.cs350.DirectoryPath.files?<br/>At DirectoryPath.java:[line 17]</p>
-            </td>
-         </tr>
-         <tr class="tablerow0" onclick="toggleRow('d1e108');">
+         <tr class="tablerow1" onclick="toggleRow('d1e13');">
             <td>
                <span class="priority-2">DLS</span>
             </td>
             <td>Dead store to offset in edu.odu.cs.cs350.GeneratedScanner.zzUnpackAction()</td>
          </tr>
-         <tr class="detailrow0">
+         <tr class="detailrow1">
             <td/>
             <td>
-               <p id="d1e108" style="display: none;">
+               <p id="d1e13" style="display: none;">
                   <a href="#DLS_DEAD_LOCAL_STORE">Bug type DLS_DEAD_LOCAL_STORE (click for details)</a>
                   <br/>In class edu.odu.cs.cs350.GeneratedScanner<br/>In method edu.odu.cs.cs350.GeneratedScanner.zzUnpackAction()<br/>Local variable named offset<br/>At GeneratedScanner.java:[line 327]</p>
             </td>
          </tr>
-         <tr class="tablerow1" onclick="toggleRow('d1e126');">
+         <tr class="tablerow0" onclick="toggleRow('d1e31');">
             <td>
                <span class="priority-2">DLS</span>
             </td>
             <td>Dead store to offset in edu.odu.cs.cs350.GeneratedScanner.zzUnpackAttribute()</td>
          </tr>
-         <tr class="detailrow1">
+         <tr class="detailrow0">
             <td/>
             <td>
-               <p id="d1e126" style="display: none;">
+               <p id="d1e31" style="display: none;">
                   <a href="#DLS_DEAD_LOCAL_STORE">Bug type DLS_DEAD_LOCAL_STORE (click for details)</a>
                   <br/>In class edu.odu.cs.cs350.GeneratedScanner<br/>In method edu.odu.cs.cs350.GeneratedScanner.zzUnpackAttribute()<br/>Local variable named offset<br/>At GeneratedScanner.java:[line 428]</p>
             </td>
          </tr>
-         <tr class="tablerow0" onclick="toggleRow('d1e144');">
+         <tr class="tablerow1" onclick="toggleRow('d1e49');">
             <td>
                <span class="priority-2">DLS</span>
             </td>
             <td>Dead store to offset in edu.odu.cs.cs350.GeneratedScanner.zzUnpackRowMap()</td>
          </tr>
-         <tr class="detailrow0">
+         <tr class="detailrow1">
             <td/>
             <td>
-               <p id="d1e144" style="display: none;">
+               <p id="d1e49" style="display: none;">
                   <a href="#DLS_DEAD_LOCAL_STORE">Bug type DLS_DEAD_LOCAL_STORE (click for details)</a>
                   <br/>In class edu.odu.cs.cs350.GeneratedScanner<br/>In method edu.odu.cs.cs350.GeneratedScanner.zzUnpackRowMap()<br/>Local variable named offset<br/>At GeneratedScanner.java:[line 355]</p>
             </td>
          </tr>
-         <tr class="tablerow1" onclick="toggleRow('d1e162');">
+         <tr class="tablerow0" onclick="toggleRow('d1e67');">
             <td>
                <span class="priority-2">DLS</span>
             </td>
             <td>Dead store to offset in edu.odu.cs.cs350.GeneratedScanner.zzUnpackTrans()</td>
          </tr>
-         <tr class="detailrow1">
+         <tr class="detailrow0">
             <td/>
             <td>
-               <p id="d1e162" style="display: none;">
+               <p id="d1e67" style="display: none;">
                   <a href="#DLS_DEAD_LOCAL_STORE">Bug type DLS_DEAD_LOCAL_STORE (click for details)</a>
                   <br/>In class edu.odu.cs.cs350.GeneratedScanner<br/>In method edu.odu.cs.cs350.GeneratedScanner.zzUnpackTrans()<br/>Local variable named offset<br/>At GeneratedScanner.java:[line 382]</p>
             </td>
          </tr>
-         <tr class="tablerow0" onclick="toggleRow('d1e181');">
+         <tr class="tablerow1" onclick="toggleRow('d1e85');">
             <td>
                <span class="priority-2">DLS</span>
             </td>
             <td>Dead store to offset in edu.odu.cs.cs350.GeneratedScanner.zzUnpackcmap_blocks()</td>
          </tr>
-         <tr class="detailrow0">
+         <tr class="detailrow1">
             <td/>
             <td>
-               <p id="d1e181" style="display: none;">
+               <p id="d1e85" style="display: none;">
                   <a href="#DLS_DEAD_LOCAL_STORE">Bug type DLS_DEAD_LOCAL_STORE (click for details)</a>
                   <br/>In class edu.odu.cs.cs350.GeneratedScanner<br/>In method edu.odu.cs.cs350.GeneratedScanner.zzUnpackcmap_blocks()<br/>Local variable named offset<br/>At GeneratedScanner.java:[line 300]</p>
             </td>
          </tr>
-         <tr class="tablerow1" onclick="toggleRow('d1e199');">
+         <tr class="tablerow0" onclick="toggleRow('d1e103');">
             <td>
                <span class="priority-2">DLS</span>
             </td>
             <td>Dead store to offset in edu.odu.cs.cs350.GeneratedScanner.zzUnpackcmap_top()</td>
          </tr>
-         <tr class="detailrow1">
+         <tr class="detailrow0">
             <td/>
             <td>
-               <p id="d1e199" style="display: none;">
+               <p id="d1e103" style="display: none;">
                   <a href="#DLS_DEAD_LOCAL_STORE">Bug type DLS_DEAD_LOCAL_STORE (click for details)</a>
                   <br/>In class edu.odu.cs.cs350.GeneratedScanner<br/>In method edu.odu.cs.cs350.GeneratedScanner.zzUnpackcmap_top()<br/>Local variable named offset<br/>At GeneratedScanner.java:[line 66]</p>
             </td>
          </tr>
-         <tr class="tablerow0" onclick="toggleRow('d1e269');">
+         <tr class="tablerow1" onclick="toggleRow('d1e174');">
             <td>
                <span class="priority-2">NP</span>
             </td>
             <td>Possible null pointer dereference in edu.odu.cs.cs350.SourceFilesList.addRecursive(String, ArrayList) due to return value of called method</td>
          </tr>
-         <tr class="detailrow0">
+         <tr class="detailrow1">
             <td/>
             <td>
-               <p id="d1e269" style="display: none;">
+               <p id="d1e174" style="display: none;">
                   <a href="#NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE">Bug type NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE (click for details)</a>
                   <br/>In class edu.odu.cs.cs350.SourceFilesList<br/>In method edu.odu.cs.cs350.SourceFilesList.addRecursive(String, ArrayList)<br/>Value loaded from filesList<br/>Dereferenced at SourceFilesList.java:[line 102]<br/>Known null at SourceFilesList.java:[line 101]</p>
             </td>
@@ -507,18 +403,6 @@ there is no easy way to eliminate these false positives.
 </p>
 
     <h2>
-         <a name="DLS_DEAD_LOCAL_STORE_SHADOWS_FIELD">DLS_DEAD_LOCAL_STORE_SHADOWS_FIELD: Dead store to local variable that shadows field</a>
-      </h2>
-
-<p>
-This instruction assigns a value to a local variable,
-but the value is not read or used in any subsequent instruction.
-Often, this indicates an error, because the value computed is never
-used. There is a field with the same name as the local variable. Did you
-mean to assign to that variable instead?
-</p>
-
-    <h2>
          <a name="NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE">NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE: Possible null pointer dereference due to return value of called method</a>
       </h2>
       
@@ -528,15 +412,6 @@ for null.  This may lead to a <code>NullPointerException</code> when the code is
 </p>
       
    <h2>
-         <a name="NP_UNWRITTEN_FIELD">NP_UNWRITTEN_FIELD: Read of unwritten field</a>
-      </h2>
-
-  <p> The program is dereferencing a field that does not seem to ever have a non-null value written to it.
-Unless the field is initialized via some mechanism not seen by the analysis,
-dereferencing this value will generate a null pointer exception.
-</p>
-
-    <h2>
          <a name="NM_CLASS_NAMING_CONVENTION">NM_CLASS_NAMING_CONVENTION: Class names should start with an upper case letter</a>
       </h2>
 
@@ -556,19 +431,6 @@ Methods should be verbs, in mixed case with the first letter lowercase, with the
       </h2>
 
   <p> This field is never read.&nbsp; Consider removing it from the class.</p>
-
-    <h2>
-         <a name="UUF_UNUSED_FIELD">UUF_UNUSED_FIELD: Unused field</a>
-      </h2>
-
-  <p> This field is never used.&nbsp; Consider removing it from the class.</p>
-
-    <h2>
-         <a name="UWF_UNWRITTEN_FIELD">UWF_UNWRITTEN_FIELD: Unwritten field</a>
-      </h2>
-
-  <p> This field is never written.&nbsp; All reads of it will return the default
-value. Check for errors (should it have been initialized?), or remove it if it is useless.</p>
 
     </body>
 </html>
