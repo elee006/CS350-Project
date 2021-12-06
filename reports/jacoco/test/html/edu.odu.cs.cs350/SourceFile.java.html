@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class SourceFile extends File
 {
 	
-	/*
+	/**
 	 * Constructs a SourceFile using an absolute path
 	 */
 	public SourceFile( String p )
@@ -16,7 +16,7 @@ public class SourceFile extends File
 <span class="fc" id="L16">	}</span>
 	
 	
-	/*
+	/**
 	 * Prints the absolute path of the file to the console
 	 */
 	public void printPath() throws IOException
@@ -24,7 +24,7 @@ public class SourceFile extends File
 <span class="fc" id="L24">		System.out.print(getCanonicalPath());	</span>
 <span class="fc" id="L25">	}</span>
 	
-	/*
+	/**
 	 * Returns true if this SourceFile has an extension contained in the ArrayList extensions
 	 */
 	public boolean checkExtension( ArrayList&lt;String&gt; extensions ) {
@@ -35,7 +35,7 @@ public class SourceFile extends File
 <span class="fc" id="L35">		return false;</span>
 	}
 	
-	/*
+	/**
 	 * Returns true if this SourceFile ends in the extension in extension
 	 */
 	public boolean checkExtension( String extension ) {

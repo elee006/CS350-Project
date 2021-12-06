@@ -8,74 +8,88 @@ import java.util.Arrays;
 
 <span class="fc" id="L9">public class PropertiesFile {</span>
 	
-	// Default number of suggestions to print
+	/**
+	 * Default number of suggestions to print
+	 */
 	static int nSuggestions;
-	// Optional properties file
+
+	/**
+	 * Optional properties file
+	 */
 	static File propFile;
 	
+	/**
+	 * Checks the arguments to see if they are valid and then constructs a SourceFileList using the specified
+	 * files, finally sorting and printing the collection.
+	 * @param args The arguments obtained from the command line
+	 */
 	public static void handleArguments(String[] args) {
 		// Container for the files to be used
 		SourceFilesList filesList;
 		// File extensions to search for files
-<span class="fc" id="L20">		ArrayList&lt;String&gt; fileExtensions = new ArrayList&lt;String&gt;();</span>
-<span class="fc" id="L21">		fileExtensions.add(&quot;.h&quot;); fileExtensions.add(&quot;.cpp&quot;);</span>
+<span class="fc" id="L30">		ArrayList&lt;String&gt; fileExtensions = new ArrayList&lt;String&gt;();</span>
+<span class="fc" id="L31">		fileExtensions.add(&quot;.h&quot;); fileExtensions.add(&quot;.cpp&quot;);</span>
 		// Position of the first file in args. If there is no properties file, this is 1; otherwise, it's 2.
-<span class="fc" id="L23">		int positionOfFirstFile = 1;</span>
+<span class="fc" id="L33">		int positionOfFirstFile = 1;</span>
 		
 		// No arguments passed - exit
-<span class="fc bfc" id="L26" title="All 2 branches covered.">		if ( args == null ) {</span>
-<span class="fc" id="L27">			System.out.println(&quot;Valid argument order: (number of suggested refactorings) (optional properties file) (files/directories to examine)&quot;);</span>
-<span class="fc" id="L28">			throw new IllegalArgumentException(&quot;No arguments passed.&quot;);</span>
+<span class="fc bfc" id="L36" title="All 2 branches covered.">		if ( args == null ) {</span>
+<span class="fc" id="L37">			System.out.println(&quot;Valid argument order: (number of suggested refactorings) (optional properties file) (files/directories to examine)&quot;);</span>
+<span class="fc" id="L38">			throw new IllegalArgumentException(&quot;No arguments passed.&quot;);</span>
 		}
 		
 		// Too few arguments passed - exit
-<span class="fc bfc" id="L32" title="All 2 branches covered.">		if ( args.length &lt;= 1 ) {</span>
-<span class="fc" id="L33">			System.out.println(&quot;Valid argument order: (number of suggested refactorings) (optional properties file) (files/directories to examine)&quot;);</span>
-<span class="fc" id="L34">			throw new IllegalArgumentException(&quot;Too few arguments passed.&quot;);</span>
+<span class="fc bfc" id="L42" title="All 2 branches covered.">		if ( args.length &lt;= 1 ) {</span>
+<span class="fc" id="L43">			System.out.println(&quot;Valid argument order: (number of suggested refactorings) (optional properties file) (files/directories to examine)&quot;);</span>
+<span class="fc" id="L44">			throw new IllegalArgumentException(&quot;Too few arguments passed.&quot;);</span>
 		}
 		
 		// Try to make the first argument nSuggestions. If it isn't an int, exit
 		try {
-<span class="fc" id="L39">	        nSuggestions = Integer.parseInt(args[0]);</span>
-<span class="fc" id="L40">	    } catch (NumberFormatException nfe) {</span>
-<span class="fc" id="L41">	    	System.out.println(&quot;Valid argument order: (number of suggested refactorings) (optional properties file) (files/directories to examine)&quot;);</span>
-<span class="fc" id="L42">	    	throw new IllegalArgumentException(&quot;First argument was not an integer.&quot;);</span>
-<span class="fc" id="L43">	    }</span>
+<span class="fc" id="L49">	        nSuggestions = Integer.parseInt(args[0]);</span>
+<span class="fc" id="L50">	    } catch (NumberFormatException nfe) {</span>
+<span class="fc" id="L51">	    	System.out.println(&quot;Valid argument order: (number of suggested refactorings) (optional properties file) (files/directories to examine)&quot;);</span>
+<span class="fc" id="L52">	    	throw new IllegalArgumentException(&quot;First argument was not an integer.&quot;);</span>
+<span class="fc" id="L53">	    }</span>
 		
 		// Check if there is a properties file. If there is, add it. Specifically, checks if the last 3 characters are .ini, which checks
 		// that the extension is .ini. pos of first file also increases by 1 to account for that argument being the properties file and not something to analyze.
-<span class="pc bpc" id="L47" title="1 of 2 branches missed.">		if ( args[1].substring( args[1].length() - 4, args[1].length() ).equals(&quot;.ini&quot;) ) {</span>
-<span class="fc" id="L48">			propFile = new File(args[1]);</span>
-<span class="fc" id="L49">			positionOfFirstFile = 2;</span>
+<span class="pc bpc" id="L57" title="1 of 2 branches missed.">		if ( args[1].substring( args[1].length() - 4, args[1].length() ).equals(&quot;.ini&quot;) ) {</span>
+<span class="fc" id="L58">			propFile = new File(args[1]);</span>
+<span class="fc" id="L59">			positionOfFirstFile = 2;</span>
 			
 			// If it doesn't exist, something went wrong. Exit so the user can fix it.
-<span class="pc bpc" id="L52" title="1 of 2 branches missed.">			if (!propFile.exists())</span>
-<span class="fc" id="L53">        		throw new IllegalArgumentException(propFile.getPath() + &quot; does not exist.&quot;);</span>
+<span class="pc bpc" id="L62" title="1 of 2 branches missed.">			if (!propFile.exists())</span>
+<span class="fc" id="L63">        		throw new IllegalArgumentException(propFile.getPath() + &quot; does not exist.&quot;);</span>
 		}
 		
 		// Try adding the rest of the files
 		try { 
-<span class="nc" id="L58">			filesList = new SourceFilesList( Arrays.copyOfRange( args, positionOfFirstFile, args.length ), fileExtensions ); </span>
-<span class="nc" id="L59">		} catch (NoSuchFileException nfe) { </span>
-<span class="nc" id="L60">			System.out.println(&quot;Valid argument order: (number of suggested refactorings) (optional properties file) (files/directories to examine)&quot;); </span>
-<span class="nc" id="L61">			throw new IllegalArgumentException(&quot;One or more argument files did not exist.&quot;); </span>
-<span class="nc" id="L62">		}</span>
+<span class="nc" id="L68">			filesList = new SourceFilesList( Arrays.copyOfRange( args, positionOfFirstFile, args.length ), fileExtensions ); </span>
+<span class="nc" id="L69">		} catch (NoSuchFileException nfe) { </span>
+<span class="nc" id="L70">			System.out.println(&quot;Valid argument order: (number of suggested refactorings) (optional properties file) (files/directories to examine)&quot;); </span>
+<span class="nc" id="L71">			throw new IllegalArgumentException(&quot;One or more argument files did not exist.&quot;); </span>
+<span class="nc" id="L72">		}</span>
 		 
 		// NOTE: This works, it's just really annoying to have to make real files.
 		
-<span class="nc" id="L66">		filesList.sort();</span>
+<span class="nc" id="L76">		filesList.sort();</span>
 		try {
-<span class="nc" id="L68">			filesList.printFiles();</span>
-<span class="nc" id="L69">		} catch (IOException e) {</span>
-<span class="nc" id="L70">			System.out.println(&quot;One or more argument files did not exist.&quot;);</span>
-<span class="nc" id="L71">			throw new IllegalArgumentException(&quot;One or more argument files did not exist.&quot;);</span>
-<span class="nc" id="L72">		}</span>
-<span class="nc" id="L73">	}</span>
-
+<span class="nc" id="L78">			filesList.printFiles();</span>
+<span class="nc" id="L79">		} catch (IOException e) {</span>
+<span class="nc" id="L80">			System.out.println(&quot;One or more argument files did not exist.&quot;);</span>
+<span class="nc" id="L81">			throw new IllegalArgumentException(&quot;One or more argument files did not exist.&quot;);</span>
+<span class="nc" id="L82">		}</span>
+<span class="nc" id="L83">	}</span>
+	
+	/**
+	 * Calls handleArguments to do the heavy lifting.
+	 * @param args the arguments to the program
+	 */
 	public static void main(String[] args) {
-<span class="nc" id="L76">		handleArguments(args);</span>
+<span class="nc" id="L90">		handleArguments(args);</span>
 		
-<span class="nc" id="L78">	}</span>
+<span class="nc" id="L92">	}</span>
 	
 }
 

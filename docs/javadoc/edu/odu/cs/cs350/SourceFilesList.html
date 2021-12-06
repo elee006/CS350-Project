@@ -192,21 +192,30 @@ extends java.util.ArrayList&lt;<a href="SourceFile.html" title="class in edu.odu
 </tr>
 <tr class="altColor">
 <th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E()">SourceFilesList</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Create an empty ArrayList of SourceFile s</div>
+</td>
 </tr>
 <tr class="rowColor">
 <th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(java.lang.String%5B%5D)">SourceFilesList</a></span>&#8203;(java.lang.String[]&nbsp;str)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Create an ArrayList with an array of paths, without checking to see if they exist</div>
+</td>
 </tr>
 <tr class="altColor">
 <th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(java.lang.String%5B%5D,boolean)">SourceFilesList</a></span>&#8203;(java.lang.String[]&nbsp;str,
                boolean&nbsp;b)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Create an ArrayList with an array of paths, checking to see if they exist if b = true</div>
+</td>
 </tr>
 <tr class="rowColor">
 <th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(java.lang.String%5B%5D,java.util.ArrayList)">SourceFilesList</a></span>&#8203;(java.lang.String[]&nbsp;path,
                java.util.ArrayList&lt;java.lang.String&gt;&nbsp;extensions)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Create an ArrayList with an array of paths, checking to see if they exist and adding files found in
+ directories if they match the file extensions present in extensions.</div>
+</td>
 </tr>
 </table>
 </li>
@@ -229,29 +238,39 @@ extends java.util.ArrayList&lt;<a href="SourceFile.html" title="class in edu.odu
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#add(java.lang.String)">add</a></span>&#8203;(java.lang.String&nbsp;s)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Add a single path</div>
+</td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#add(java.lang.String,java.util.ArrayList)">add</a></span>&#8203;(java.lang.String&nbsp;path,
    java.util.ArrayList&lt;java.lang.String&gt;&nbsp;extensions)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Add a single path if it ends in an extension contained in the ArrayList extensions</div>
+</td>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#addRecursive(java.lang.String,java.util.ArrayList)">addRecursive</a></span>&#8203;(java.lang.String&nbsp;path,
             java.util.ArrayList&lt;java.lang.String&gt;&nbsp;extensions)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Add a single path, and if the file is a directory, add all files and directories it contains.</div>
+</td>
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#printFiles()">printFiles</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Print the file paths</div>
+</td>
 </tr>
 <tr id="i4" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#sort()">sort</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Sort into ascending order</div>
+</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -312,6 +331,7 @@ extends java.util.ArrayList&lt;<a href="SourceFile.html" title="class in edu.odu
 <li class="blockList">
 <h4>SourceFilesList</h4>
 <pre>public&nbsp;SourceFilesList()</pre>
+<div class="block">Create an empty ArrayList of SourceFile s</div>
 </li>
 </ul>
 <a id="&lt;init&gt;(java.lang.String[])">
@@ -321,6 +341,11 @@ extends java.util.ArrayList&lt;<a href="SourceFile.html" title="class in edu.odu
 <li class="blockList">
 <h4>SourceFilesList</h4>
 <pre>public&nbsp;SourceFilesList&#8203;(java.lang.String[]&nbsp;str)</pre>
+<div class="block">Create an ArrayList with an array of paths, without checking to see if they exist</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>str</code> - The array of paths to construct the SourceFiles</dd>
+</dl>
 </li>
 </ul>
 <a id="&lt;init&gt;(java.lang.String[],boolean)">
@@ -332,7 +357,11 @@ extends java.util.ArrayList&lt;<a href="SourceFile.html" title="class in edu.odu
 <pre>public&nbsp;SourceFilesList&#8203;(java.lang.String[]&nbsp;str,
                        boolean&nbsp;b)
                 throws java.nio.file.NoSuchFileException</pre>
+<div class="block">Create an ArrayList with an array of paths, checking to see if they exist if b = true</div>
 <dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>srt</code> - The array of paths to construct the SourceFiles</dd>
+<dd><code>b</code> - The boolean to determine whether or not to check if the files exist</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code>java.nio.file.NoSuchFileException</code></dd>
 </dl>
@@ -347,7 +376,15 @@ extends java.util.ArrayList&lt;<a href="SourceFile.html" title="class in edu.odu
 <pre>public&nbsp;SourceFilesList&#8203;(java.lang.String[]&nbsp;path,
                        java.util.ArrayList&lt;java.lang.String&gt;&nbsp;extensions)
                 throws java.nio.file.NoSuchFileException</pre>
+<div class="block">Create an ArrayList with an array of paths, checking to see if they exist and adding files found in
+ directories if they match the file extensions present in extensions.
+ This is used primarily to call addRecursive on directories and add on normal files specified directly,
+ since it seems more useful to be able to analyze, for example, c_code_wip.txt in addition to normal C++ files
+ without having to analyze every file ending in .txt.</div>
 <dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>path</code> - The array of paths to construct the SourceFiles</dd>
+<dd><code>extensions</code> - The collection of extensions to require the files to match, if they were specified through a directory</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code>java.nio.file.NoSuchFileException</code></dd>
 </dl>
@@ -372,7 +409,11 @@ extends java.util.ArrayList&lt;<a href="SourceFile.html" title="class in edu.odu
 <pre class="methodSignature">public&nbsp;void&nbsp;add&#8203;(java.lang.String&nbsp;path,
                 java.util.ArrayList&lt;java.lang.String&gt;&nbsp;extensions)
          throws java.nio.file.NoSuchFileException</pre>
+<div class="block">Add a single path if it ends in an extension contained in the ArrayList extensions</div>
 <dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>path</code> - The string specifying the path to a file</dd>
+<dd><code>extensions</code> - The collection of extensions to require the file to match</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code>java.nio.file.NoSuchFileException</code></dd>
 </dl>
@@ -387,7 +428,11 @@ extends java.util.ArrayList&lt;<a href="SourceFile.html" title="class in edu.odu
 <pre class="methodSignature">public&nbsp;void&nbsp;addRecursive&#8203;(java.lang.String&nbsp;path,
                          java.util.ArrayList&lt;java.lang.String&gt;&nbsp;extensions)
                   throws java.nio.file.NoSuchFileException</pre>
+<div class="block">Add a single path, and if the file is a directory, add all files and directories it contains.</div>
 <dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>path</code> - The string specifying the path to a file</dd>
+<dd><code>extensions</code> - The collection of extensions to require the files to match</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code>java.nio.file.NoSuchFileException</code></dd>
 </dl>
@@ -400,6 +445,11 @@ extends java.util.ArrayList&lt;<a href="SourceFile.html" title="class in edu.odu
 <li class="blockList">
 <h4>add</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;add&#8203;(java.lang.String&nbsp;s)</pre>
+<div class="block">Add a single path</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>s</code> - The string containing the path to the file</dd>
+</dl>
 </li>
 </ul>
 <a id="sort()">
@@ -409,6 +459,7 @@ extends java.util.ArrayList&lt;<a href="SourceFile.html" title="class in edu.odu
 <li class="blockList">
 <h4>sort</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;sort()</pre>
+<div class="block">Sort into ascending order</div>
 </li>
 </ul>
 <a id="printFiles()">
@@ -419,6 +470,7 @@ extends java.util.ArrayList&lt;<a href="SourceFile.html" title="class in edu.odu
 <h4>printFiles</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;printFiles()
                 throws java.io.IOException</pre>
+<div class="block">Print the file paths</div>
 <dl>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code>java.io.IOException</code></dd>
