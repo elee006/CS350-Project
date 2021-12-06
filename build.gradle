@@ -4,7 +4,7 @@ plugins {
 	id "org.xbib.gradle.plugin.git" version "2.0.0"
     id "org.xbib.gradle.plugin.jflex" version "1.5.0"
 	id "com.github.spotbugs" version "4.6.0"
-
+	id 'jacoco'
 }
 
 java {
@@ -45,7 +45,7 @@ javadoc {
    failOnError = false;
 }
 
-task reports (dependsOn: ['javadoc', 'test', 'spotbugsMain']) {
+task reports (dependsOn: ['javadoc', 'test', 'spotbugsMain', 'jacocoTestReport']) {
 	description 'Generate reports for the project website'
 }
 
