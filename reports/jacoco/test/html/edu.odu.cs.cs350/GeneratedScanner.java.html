@@ -29,14 +29,14 @@ public class GeneratedScanner {
    *                  at the beginning of a line
    * l is of the form l = 2*k, k a non negative integer
    */
-<span class="nc" id="L32">  private static final int ZZ_LEXSTATE[] = {</span>
+<span class="fc" id="L32">  private static final int ZZ_LEXSTATE[] = {</span>
      0, 0
   };
 
   /**
    * Top-level table for translating characters to character classes
    */
-<span class="nc" id="L39">  private static final int [] ZZ_CMAP_TOP = zzUnpackcmap_top();</span>
+<span class="fc" id="L39">  private static final int [] ZZ_CMAP_TOP = zzUnpackcmap_top();</span>
 
   private static final String ZZ_CMAP_TOP_PACKED_0 =
     &quot;\1\0\1\u0100\1\u0200\1\u0300\1\u0400\1\u0500\1\u0600\1\u0700&quot;+
@@ -61,29 +61,29 @@ public class GeneratedScanner {
     &quot;\1\u6b00\u02fe\u1f00&quot;;
 
   private static int [] zzUnpackcmap_top() {
-<span class="nc" id="L64">    int [] result = new int[4352];</span>
-<span class="nc" id="L65">    int offset = 0;</span>
-<span class="nc" id="L66">    offset = zzUnpackcmap_top(ZZ_CMAP_TOP_PACKED_0, offset, result);</span>
-<span class="nc" id="L67">    return result;</span>
+<span class="fc" id="L64">    int [] result = new int[4352];</span>
+<span class="fc" id="L65">    int offset = 0;</span>
+<span class="fc" id="L66">    offset = zzUnpackcmap_top(ZZ_CMAP_TOP_PACKED_0, offset, result);</span>
+<span class="fc" id="L67">    return result;</span>
   }
 
   private static int zzUnpackcmap_top(String packed, int offset, int [] result) {
-<span class="nc" id="L71">    int i = 0;       /* index in packed string  */</span>
-<span class="nc" id="L72">    int j = offset;  /* index in unpacked array */</span>
-<span class="nc" id="L73">    int l = packed.length();</span>
-<span class="nc bnc" id="L74" title="All 2 branches missed.">    while (i &lt; l) {</span>
-<span class="nc" id="L75">      int count = packed.charAt(i++);</span>
-<span class="nc" id="L76">      int value = packed.charAt(i++);</span>
-<span class="nc bnc" id="L77" title="All 2 branches missed.">      do result[j++] = value; while (--count &gt; 0);</span>
-<span class="nc" id="L78">    }</span>
-<span class="nc" id="L79">    return j;</span>
+<span class="fc" id="L71">    int i = 0;       /* index in packed string  */</span>
+<span class="fc" id="L72">    int j = offset;  /* index in unpacked array */</span>
+<span class="fc" id="L73">    int l = packed.length();</span>
+<span class="fc bfc" id="L74" title="All 2 branches covered.">    while (i &lt; l) {</span>
+<span class="fc" id="L75">      int count = packed.charAt(i++);</span>
+<span class="fc" id="L76">      int value = packed.charAt(i++);</span>
+<span class="fc bfc" id="L77" title="All 2 branches covered.">      do result[j++] = value; while (--count &gt; 0);</span>
+<span class="fc" id="L78">    }</span>
+<span class="fc" id="L79">    return j;</span>
   }
 
 
   /**
    * Second-level tables for translating characters to character classes
    */
-<span class="nc" id="L86">  private static final int [] ZZ_CMAP_BLOCKS = zzUnpackcmap_blocks();</span>
+<span class="fc" id="L86">  private static final int [] ZZ_CMAP_BLOCKS = zzUnpackcmap_blocks();</span>
 
   private static final String ZZ_CMAP_BLOCKS_PACKED_0 =
     &quot;\11\0\1\1\1\2\1\3\1\1\1\4\16\0\4\3&quot;+
@@ -295,105 +295,105 @@ public class GeneratedScanner {
     &quot;\36\3\140\0\200\3\360\0\20\3&quot;;
 
   private static int [] zzUnpackcmap_blocks() {
-<span class="nc" id="L298">    int [] result = new int[27648];</span>
-<span class="nc" id="L299">    int offset = 0;</span>
-<span class="nc" id="L300">    offset = zzUnpackcmap_blocks(ZZ_CMAP_BLOCKS_PACKED_0, offset, result);</span>
-<span class="nc" id="L301">    return result;</span>
+<span class="fc" id="L298">    int [] result = new int[27648];</span>
+<span class="fc" id="L299">    int offset = 0;</span>
+<span class="fc" id="L300">    offset = zzUnpackcmap_blocks(ZZ_CMAP_BLOCKS_PACKED_0, offset, result);</span>
+<span class="fc" id="L301">    return result;</span>
   }
 
   private static int zzUnpackcmap_blocks(String packed, int offset, int [] result) {
-<span class="nc" id="L305">    int i = 0;       /* index in packed string  */</span>
-<span class="nc" id="L306">    int j = offset;  /* index in unpacked array */</span>
-<span class="nc" id="L307">    int l = packed.length();</span>
-<span class="nc bnc" id="L308" title="All 2 branches missed.">    while (i &lt; l) {</span>
-<span class="nc" id="L309">      int count = packed.charAt(i++);</span>
-<span class="nc" id="L310">      int value = packed.charAt(i++);</span>
-<span class="nc bnc" id="L311" title="All 2 branches missed.">      do result[j++] = value; while (--count &gt; 0);</span>
-<span class="nc" id="L312">    }</span>
-<span class="nc" id="L313">    return j;</span>
+<span class="fc" id="L305">    int i = 0;       /* index in packed string  */</span>
+<span class="fc" id="L306">    int j = offset;  /* index in unpacked array */</span>
+<span class="fc" id="L307">    int l = packed.length();</span>
+<span class="fc bfc" id="L308" title="All 2 branches covered.">    while (i &lt; l) {</span>
+<span class="fc" id="L309">      int count = packed.charAt(i++);</span>
+<span class="fc" id="L310">      int value = packed.charAt(i++);</span>
+<span class="fc bfc" id="L311" title="All 2 branches covered.">      do result[j++] = value; while (--count &gt; 0);</span>
+<span class="fc" id="L312">    }</span>
+<span class="fc" id="L313">    return j;</span>
   }
 
   /**
    * Translates DFA states to action switch labels.
    */
-<span class="nc" id="L319">  private static final int [] ZZ_ACTION = zzUnpackAction();</span>
+<span class="fc" id="L319">  private static final int [] ZZ_ACTION = zzUnpackAction();</span>
 
   private static final String ZZ_ACTION_PACKED_0 =
     &quot;\1\0\1\1\2\2\1\3\1\4\1\0&quot;;
 
   private static int [] zzUnpackAction() {
-<span class="nc" id="L325">    int [] result = new int[7];</span>
-<span class="nc" id="L326">    int offset = 0;</span>
-<span class="nc" id="L327">    offset = zzUnpackAction(ZZ_ACTION_PACKED_0, offset, result);</span>
-<span class="nc" id="L328">    return result;</span>
+<span class="fc" id="L325">    int [] result = new int[7];</span>
+<span class="fc" id="L326">    int offset = 0;</span>
+<span class="fc" id="L327">    offset = zzUnpackAction(ZZ_ACTION_PACKED_0, offset, result);</span>
+<span class="fc" id="L328">    return result;</span>
   }
 
   private static int zzUnpackAction(String packed, int offset, int [] result) {
-<span class="nc" id="L332">    int i = 0;       /* index in packed string  */</span>
-<span class="nc" id="L333">    int j = offset;  /* index in unpacked array */</span>
-<span class="nc" id="L334">    int l = packed.length();</span>
-<span class="nc bnc" id="L335" title="All 2 branches missed.">    while (i &lt; l) {</span>
-<span class="nc" id="L336">      int count = packed.charAt(i++);</span>
-<span class="nc" id="L337">      int value = packed.charAt(i++);</span>
-<span class="nc bnc" id="L338" title="All 2 branches missed.">      do result[j++] = value; while (--count &gt; 0);</span>
-<span class="nc" id="L339">    }</span>
-<span class="nc" id="L340">    return j;</span>
+<span class="fc" id="L332">    int i = 0;       /* index in packed string  */</span>
+<span class="fc" id="L333">    int j = offset;  /* index in unpacked array */</span>
+<span class="fc" id="L334">    int l = packed.length();</span>
+<span class="fc bfc" id="L335" title="All 2 branches covered.">    while (i &lt; l) {</span>
+<span class="fc" id="L336">      int count = packed.charAt(i++);</span>
+<span class="fc" id="L337">      int value = packed.charAt(i++);</span>
+<span class="fc bfc" id="L338" title="All 2 branches covered.">      do result[j++] = value; while (--count &gt; 0);</span>
+<span class="fc" id="L339">    }</span>
+<span class="fc" id="L340">    return j;</span>
   }
 
 
   /**
    * Translates a state to a row index in the transition table
    */
-<span class="nc" id="L347">  private static final int [] ZZ_ROWMAP = zzUnpackRowMap();</span>
+<span class="fc" id="L347">  private static final int [] ZZ_ROWMAP = zzUnpackRowMap();</span>
 
   private static final String ZZ_ROWMAP_PACKED_0 =
     &quot;\0\0\0\10\0\10\0\20\0\30\0\40\0\40&quot;;
 
   private static int [] zzUnpackRowMap() {
-<span class="nc" id="L353">    int [] result = new int[7];</span>
-<span class="nc" id="L354">    int offset = 0;</span>
-<span class="nc" id="L355">    offset = zzUnpackRowMap(ZZ_ROWMAP_PACKED_0, offset, result);</span>
-<span class="nc" id="L356">    return result;</span>
+<span class="fc" id="L353">    int [] result = new int[7];</span>
+<span class="fc" id="L354">    int offset = 0;</span>
+<span class="fc" id="L355">    offset = zzUnpackRowMap(ZZ_ROWMAP_PACKED_0, offset, result);</span>
+<span class="fc" id="L356">    return result;</span>
   }
 
   private static int zzUnpackRowMap(String packed, int offset, int [] result) {
-<span class="nc" id="L360">    int i = 0;  /* index in packed string  */</span>
-<span class="nc" id="L361">    int j = offset;  /* index in unpacked array */</span>
-<span class="nc" id="L362">    int l = packed.length();</span>
-<span class="nc bnc" id="L363" title="All 2 branches missed.">    while (i &lt; l) {</span>
-<span class="nc" id="L364">      int high = packed.charAt(i++) &lt;&lt; 16;</span>
-<span class="nc" id="L365">      result[j++] = high | packed.charAt(i++);</span>
-<span class="nc" id="L366">    }</span>
-<span class="nc" id="L367">    return j;</span>
+<span class="fc" id="L360">    int i = 0;  /* index in packed string  */</span>
+<span class="fc" id="L361">    int j = offset;  /* index in unpacked array */</span>
+<span class="fc" id="L362">    int l = packed.length();</span>
+<span class="fc bfc" id="L363" title="All 2 branches covered.">    while (i &lt; l) {</span>
+<span class="fc" id="L364">      int high = packed.charAt(i++) &lt;&lt; 16;</span>
+<span class="fc" id="L365">      result[j++] = high | packed.charAt(i++);</span>
+<span class="fc" id="L366">    }</span>
+<span class="fc" id="L367">    return j;</span>
   }
 
   /**
    * The transition table of the DFA
    */
-<span class="nc" id="L373">  private static final int [] ZZ_TRANS = zzUnpackTrans();</span>
+<span class="fc" id="L373">  private static final int [] ZZ_TRANS = zzUnpackTrans();</span>
 
   private static final String ZZ_TRANS_PACKED_0 =
     &quot;\1\2\2\3\1\2\1\4\1\5\1\6\1\5\12\0&quot;+
     &quot;\1\3\5\0\1\5\4\0\3\5\6\0\1\6\1\7&quot;;
 
   private static int [] zzUnpackTrans() {
-<span class="nc" id="L380">    int [] result = new int[40];</span>
-<span class="nc" id="L381">    int offset = 0;</span>
-<span class="nc" id="L382">    offset = zzUnpackTrans(ZZ_TRANS_PACKED_0, offset, result);</span>
-<span class="nc" id="L383">    return result;</span>
+<span class="fc" id="L380">    int [] result = new int[40];</span>
+<span class="fc" id="L381">    int offset = 0;</span>
+<span class="fc" id="L382">    offset = zzUnpackTrans(ZZ_TRANS_PACKED_0, offset, result);</span>
+<span class="fc" id="L383">    return result;</span>
   }
 
   private static int zzUnpackTrans(String packed, int offset, int [] result) {
-<span class="nc" id="L387">    int i = 0;       /* index in packed string  */</span>
-<span class="nc" id="L388">    int j = offset;  /* index in unpacked array */</span>
-<span class="nc" id="L389">    int l = packed.length();</span>
-<span class="nc bnc" id="L390" title="All 2 branches missed.">    while (i &lt; l) {</span>
-<span class="nc" id="L391">      int count = packed.charAt(i++);</span>
-<span class="nc" id="L392">      int value = packed.charAt(i++);</span>
-<span class="nc" id="L393">      value--;</span>
-<span class="nc bnc" id="L394" title="All 2 branches missed.">      do result[j++] = value; while (--count &gt; 0);</span>
-<span class="nc" id="L395">    }</span>
-<span class="nc" id="L396">    return j;</span>
+<span class="fc" id="L387">    int i = 0;       /* index in packed string  */</span>
+<span class="fc" id="L388">    int j = offset;  /* index in unpacked array */</span>
+<span class="fc" id="L389">    int l = packed.length();</span>
+<span class="fc bfc" id="L390" title="All 2 branches covered.">    while (i &lt; l) {</span>
+<span class="fc" id="L391">      int count = packed.charAt(i++);</span>
+<span class="fc" id="L392">      int value = packed.charAt(i++);</span>
+<span class="fc" id="L393">      value--;</span>
+<span class="fc bfc" id="L394" title="All 2 branches covered.">      do result[j++] = value; while (--count &gt; 0);</span>
+<span class="fc" id="L395">    }</span>
+<span class="fc" id="L396">    return j;</span>
   }
 
 
@@ -408,7 +408,7 @@ public class GeneratedScanner {
    * Error messages for {@link #ZZ_UNKNOWN_ERROR}, {@link #ZZ_NO_MATCH}, and
    * {@link #ZZ_PUSHBACK_2BIG} respectively.
    */
-<span class="nc" id="L411">  private static final String ZZ_ERROR_MSG[] = {</span>
+<span class="fc" id="L411">  private static final String ZZ_ERROR_MSG[] = {</span>
     &quot;Unknown internal scanner error&quot;,
     &quot;Error: could not match input&quot;,
     &quot;Error: pushback value was too large&quot;
@@ -417,28 +417,28 @@ public class GeneratedScanner {
   /**
    * ZZ_ATTRIBUTE[aState] contains the attributes of state {@code aState}
    */
-<span class="nc" id="L420">  private static final int [] ZZ_ATTRIBUTE = zzUnpackAttribute();</span>
+<span class="fc" id="L420">  private static final int [] ZZ_ATTRIBUTE = zzUnpackAttribute();</span>
 
   private static final String ZZ_ATTRIBUTE_PACKED_0 =
     &quot;\1\0\2\11\3\1\1\0&quot;;
 
   private static int [] zzUnpackAttribute() {
-<span class="nc" id="L426">    int [] result = new int[7];</span>
-<span class="nc" id="L427">    int offset = 0;</span>
-<span class="nc" id="L428">    offset = zzUnpackAttribute(ZZ_ATTRIBUTE_PACKED_0, offset, result);</span>
-<span class="nc" id="L429">    return result;</span>
+<span class="fc" id="L426">    int [] result = new int[7];</span>
+<span class="fc" id="L427">    int offset = 0;</span>
+<span class="fc" id="L428">    offset = zzUnpackAttribute(ZZ_ATTRIBUTE_PACKED_0, offset, result);</span>
+<span class="fc" id="L429">    return result;</span>
   }
 
   private static int zzUnpackAttribute(String packed, int offset, int [] result) {
-<span class="nc" id="L433">    int i = 0;       /* index in packed string  */</span>
-<span class="nc" id="L434">    int j = offset;  /* index in unpacked array */</span>
-<span class="nc" id="L435">    int l = packed.length();</span>
-<span class="nc bnc" id="L436" title="All 2 branches missed.">    while (i &lt; l) {</span>
-<span class="nc" id="L437">      int count = packed.charAt(i++);</span>
-<span class="nc" id="L438">      int value = packed.charAt(i++);</span>
-<span class="nc bnc" id="L439" title="All 2 branches missed.">      do result[j++] = value; while (--count &gt; 0);</span>
-<span class="nc" id="L440">    }</span>
-<span class="nc" id="L441">    return j;</span>
+<span class="fc" id="L433">    int i = 0;       /* index in packed string  */</span>
+<span class="fc" id="L434">    int j = offset;  /* index in unpacked array */</span>
+<span class="fc" id="L435">    int l = packed.length();</span>
+<span class="fc bfc" id="L436" title="All 2 branches covered.">    while (i &lt; l) {</span>
+<span class="fc" id="L437">      int count = packed.charAt(i++);</span>
+<span class="fc" id="L438">      int value = packed.charAt(i++);</span>
+<span class="fc bfc" id="L439" title="All 2 branches covered.">      do result[j++] = value; while (--count &gt; 0);</span>
+<span class="fc" id="L440">    }</span>
+<span class="fc" id="L441">    return j;</span>
   }
 
   /** Input device. */
@@ -448,13 +448,13 @@ public class GeneratedScanner {
   private int zzState;
 
   /** Current lexical state. */
-<span class="nc" id="L451">  private int zzLexicalState = YYINITIAL;</span>
+<span class="fc" id="L451">  private int zzLexicalState = YYINITIAL;</span>
 
   /**
    * This buffer contains the current text to be matched and is the source of the {@link #yytext()}
    * string.
    */
-<span class="nc" id="L457">  private char zzBuffer[] = new char[ZZ_BUFFERSIZE];</span>
+<span class="fc" id="L457">  private char zzBuffer[] = new char[ZZ_BUFFERSIZE];</span>
 
   /** Text position at the last accepting state. */
   private int zzMarkedPos;
@@ -480,7 +480,7 @@ public class GeneratedScanner {
    * &lt;p&gt;When a lead/high surrogate has been read from the input stream into the final
    * {@link #zzBuffer} position, this will have a value of 1; otherwise, it will have a value of 0.
    */
-<span class="nc" id="L483">  private int zzFinalHighSurrogate = 0;</span>
+<span class="fc" id="L483">  private int zzFinalHighSurrogate = 0;</span>
 
   /** Number of newlines encountered up to the start of the matched text. */
   private int yyline;
@@ -493,7 +493,7 @@ public class GeneratedScanner {
   private long yychar;
 
   /** Whether the scanner is currently at the beginning of a line. */
-<span class="nc" id="L496">  @SuppressWarnings(&quot;unused&quot;)</span>
+<span class="fc" id="L496">  @SuppressWarnings(&quot;unused&quot;)</span>
   private boolean zzAtBOL = true;
 
   /** Whether the user-EOF-code has already been executed. */
@@ -501,14 +501,14 @@ public class GeneratedScanner {
   private boolean zzEOFDone;
 
   /* user code: */
-<span class="nc" id="L504">  StringBuilder string = new StringBuilder();</span>
+<span class="fc" id="L504">  StringBuilder string = new StringBuilder();</span>
   
   private token symbol(TokenTypes type) {
-<span class="nc" id="L507">    return new token(type, yyline+1, yycolumn+1);</span>
+<span class="fc" id="L507">    return new token(type, yyline+1, yycolumn+1);</span>
   }
 
   private token symbol(TokenTypes type, String value) {
-<span class="nc" id="L511">    return new token(type, yyline+1, yycolumn+1, value);</span>
+<span class="fc" id="L511">    return new token(type, yyline+1, yycolumn+1, value);</span>
   }
 
 
@@ -518,16 +518,16 @@ public class GeneratedScanner {
    *
    * @param   in  the java.io.Reader to read input from.
    */
-<span class="nc" id="L521">  public GeneratedScanner(java.io.Reader in) {</span>
-<span class="nc" id="L522">    this.zzReader = in;</span>
-<span class="nc" id="L523">  }</span>
+<span class="fc" id="L521">  public GeneratedScanner(java.io.Reader in) {</span>
+<span class="fc" id="L522">    this.zzReader = in;</span>
+<span class="fc" id="L523">  }</span>
 
   /**
    * Translates raw input code points to DFA table row
    */
   private static int zzCMap(int input) {
-<span class="nc" id="L529">    int offset = input &amp; 255;</span>
-<span class="nc bnc" id="L530" title="All 2 branches missed.">    return offset == input ? ZZ_CMAP_BLOCKS[offset] : ZZ_CMAP_BLOCKS[ZZ_CMAP_TOP[input &gt;&gt; 8] | offset];</span>
+<span class="fc" id="L529">    int offset = input &amp; 255;</span>
+<span class="pc bpc" id="L530" title="1 of 2 branches missed.">    return offset == input ? ZZ_CMAP_BLOCKS[offset] : ZZ_CMAP_BLOCKS[ZZ_CMAP_TOP[input &gt;&gt; 8] | offset];</span>
   }
 
   /**
@@ -539,22 +539,22 @@ public class GeneratedScanner {
   private boolean zzRefill() throws java.io.IOException {
 
     /* first: make room (if you can) */
-<span class="nc bnc" id="L542" title="All 2 branches missed.">    if (zzStartRead &gt; 0) {</span>
-<span class="nc" id="L543">      zzEndRead += zzFinalHighSurrogate;</span>
-<span class="nc" id="L544">      zzFinalHighSurrogate = 0;</span>
-<span class="nc" id="L545">      System.arraycopy(zzBuffer, zzStartRead,</span>
+<span class="fc bfc" id="L542" title="All 2 branches covered.">    if (zzStartRead &gt; 0) {</span>
+<span class="fc" id="L543">      zzEndRead += zzFinalHighSurrogate;</span>
+<span class="fc" id="L544">      zzFinalHighSurrogate = 0;</span>
+<span class="fc" id="L545">      System.arraycopy(zzBuffer, zzStartRead,</span>
                        zzBuffer, 0,
                        zzEndRead - zzStartRead);
 
       /* translate stored positions */
-<span class="nc" id="L550">      zzEndRead -= zzStartRead;</span>
-<span class="nc" id="L551">      zzCurrentPos -= zzStartRead;</span>
-<span class="nc" id="L552">      zzMarkedPos -= zzStartRead;</span>
-<span class="nc" id="L553">      zzStartRead = 0;</span>
+<span class="fc" id="L550">      zzEndRead -= zzStartRead;</span>
+<span class="fc" id="L551">      zzCurrentPos -= zzStartRead;</span>
+<span class="fc" id="L552">      zzMarkedPos -= zzStartRead;</span>
+<span class="fc" id="L553">      zzStartRead = 0;</span>
     }
 
     /* is the buffer big enough? */
-<span class="nc bnc" id="L557" title="All 2 branches missed.">    if (zzCurrentPos &gt;= zzBuffer.length - zzFinalHighSurrogate) {</span>
+<span class="pc bpc" id="L557" title="1 of 2 branches missed.">    if (zzCurrentPos &gt;= zzBuffer.length - zzFinalHighSurrogate) {</span>
       /* if not: blow it up */
 <span class="nc" id="L559">      char newBuffer[] = new char[zzBuffer.length * 2];</span>
 <span class="nc" id="L560">      System.arraycopy(zzBuffer, 0, newBuffer, 0, zzBuffer.length);</span>
@@ -564,17 +564,17 @@ public class GeneratedScanner {
     }
 
     /* fill the buffer with new input */
-<span class="nc" id="L567">    int requested = zzBuffer.length - zzEndRead;</span>
-<span class="nc" id="L568">    int numRead = zzReader.read(zzBuffer, zzEndRead, requested);</span>
+<span class="fc" id="L567">    int requested = zzBuffer.length - zzEndRead;</span>
+<span class="fc" id="L568">    int numRead = zzReader.read(zzBuffer, zzEndRead, requested);</span>
 
     /* not supposed to occur according to specification of java.io.Reader */
-<span class="nc bnc" id="L571" title="All 2 branches missed.">    if (numRead == 0) {</span>
+<span class="pc bpc" id="L571" title="1 of 2 branches missed.">    if (numRead == 0) {</span>
 <span class="nc" id="L572">      throw new java.io.IOException(</span>
           &quot;Reader returned 0 characters. See JFlex examples/zero-reader for a workaround.&quot;);
     }
-<span class="nc bnc" id="L575" title="All 2 branches missed.">    if (numRead &gt; 0) {</span>
-<span class="nc" id="L576">      zzEndRead += numRead;</span>
-<span class="nc bnc" id="L577" title="All 2 branches missed.">      if (Character.isHighSurrogate(zzBuffer[zzEndRead - 1])) {</span>
+<span class="fc bfc" id="L575" title="All 2 branches covered.">    if (numRead &gt; 0) {</span>
+<span class="fc" id="L576">      zzEndRead += numRead;</span>
+<span class="pc bpc" id="L577" title="1 of 2 branches missed.">      if (Character.isHighSurrogate(zzBuffer[zzEndRead - 1])) {</span>
 <span class="nc bnc" id="L578" title="All 2 branches missed.">        if (numRead == requested) { // We requested too few chars to encode a full Unicode character</span>
 <span class="nc" id="L579">          --zzEndRead;</span>
 <span class="nc" id="L580">          zzFinalHighSurrogate = 1;</span>
@@ -588,11 +588,11 @@ public class GeneratedScanner {
         }
       }
       /* potentially more input available */
-<span class="nc" id="L591">      return false;</span>
+<span class="fc" id="L591">      return false;</span>
     }
 
     /* numRead &lt; 0 ==&gt; end of stream */
-<span class="nc" id="L595">    return true;</span>
+<span class="fc" id="L595">    return true;</span>
   }
 
 
@@ -686,7 +686,7 @@ public class GeneratedScanner {
    * @return the matched text.
    */
   public final String yytext() {
-<span class="nc" id="L689">    return new String(zzBuffer, zzStartRead, zzMarkedPos-zzStartRead);</span>
+<span class="fc" id="L689">    return new String(zzBuffer, zzStartRead, zzMarkedPos-zzStartRead);</span>
   }
 
 
@@ -772,25 +772,25 @@ public class GeneratedScanner {
     // cached fields:
     int zzCurrentPosL;
     int zzMarkedPosL;
-<span class="nc" id="L775">    int zzEndReadL = zzEndRead;</span>
-<span class="nc" id="L776">    char[] zzBufferL = zzBuffer;</span>
+<span class="fc" id="L775">    int zzEndReadL = zzEndRead;</span>
+<span class="fc" id="L776">    char[] zzBufferL = zzBuffer;</span>
 
-<span class="nc" id="L778">    int [] zzTransL = ZZ_TRANS;</span>
-<span class="nc" id="L779">    int [] zzRowMapL = ZZ_ROWMAP;</span>
-<span class="nc" id="L780">    int [] zzAttrL = ZZ_ATTRIBUTE;</span>
+<span class="fc" id="L778">    int [] zzTransL = ZZ_TRANS;</span>
+<span class="fc" id="L779">    int [] zzRowMapL = ZZ_ROWMAP;</span>
+<span class="fc" id="L780">    int [] zzAttrL = ZZ_ATTRIBUTE;</span>
 
     while (true) {
-<span class="nc" id="L783">      zzMarkedPosL = zzMarkedPos;</span>
+<span class="fc" id="L783">      zzMarkedPosL = zzMarkedPos;</span>
 
-<span class="nc" id="L785">      boolean zzR = false;</span>
+<span class="fc" id="L785">      boolean zzR = false;</span>
       int zzCh;
       int zzCharCount;
-<span class="nc" id="L788">      for (zzCurrentPosL = zzStartRead  ;</span>
-<span class="nc bnc" id="L789" title="All 2 branches missed.">           zzCurrentPosL &lt; zzMarkedPosL ;</span>
-<span class="nc" id="L790">           zzCurrentPosL += zzCharCount ) {</span>
-<span class="nc" id="L791">        zzCh = Character.codePointAt(zzBufferL, zzCurrentPosL, zzMarkedPosL);</span>
-<span class="nc" id="L792">        zzCharCount = Character.charCount(zzCh);</span>
-<span class="nc bnc" id="L793" title="All 4 branches missed.">        switch (zzCh) {</span>
+<span class="fc" id="L788">      for (zzCurrentPosL = zzStartRead  ;</span>
+<span class="fc bfc" id="L789" title="All 2 branches covered.">           zzCurrentPosL &lt; zzMarkedPosL ;</span>
+<span class="fc" id="L790">           zzCurrentPosL += zzCharCount ) {</span>
+<span class="fc" id="L791">        zzCh = Character.codePointAt(zzBufferL, zzCurrentPosL, zzMarkedPosL);</span>
+<span class="fc" id="L792">        zzCharCount = Character.charCount(zzCh);</span>
+<span class="pc bpc" id="L793" title="3 of 4 branches missed.">        switch (zzCh) {</span>
         case '\u000B':  // fall through
         case '\u000C':  // fall through
         case '\u0085':  // fall through
@@ -814,12 +814,12 @@ public class GeneratedScanner {
           }
 <span class="nc" id="L815">          break;</span>
         default:
-<span class="nc" id="L817">          zzR = false;</span>
-<span class="nc" id="L818">          yycolumn += zzCharCount;</span>
+<span class="fc" id="L817">          zzR = false;</span>
+<span class="fc" id="L818">          yycolumn += zzCharCount;</span>
         }
       }
 
-<span class="nc bnc" id="L822" title="All 2 branches missed.">      if (zzR) {</span>
+<span class="pc bpc" id="L822" title="1 of 2 branches missed.">      if (zzR) {</span>
         // peek one character ahead if it is
         // (if we have counted one line too much)
         boolean zzPeek;
@@ -839,15 +839,15 @@ public class GeneratedScanner {
         }
 <span class="nc bnc" id="L840" title="All 2 branches missed.">        if (zzPeek) yyline--;</span>
       }
-<span class="nc" id="L842">      zzAction = -1;</span>
+<span class="fc" id="L842">      zzAction = -1;</span>
 
-<span class="nc" id="L844">      zzCurrentPosL = zzCurrentPos = zzStartRead = zzMarkedPosL;</span>
+<span class="fc" id="L844">      zzCurrentPosL = zzCurrentPos = zzStartRead = zzMarkedPosL;</span>
 
-<span class="nc" id="L846">      zzState = ZZ_LEXSTATE[zzLexicalState];</span>
+<span class="fc" id="L846">      zzState = ZZ_LEXSTATE[zzLexicalState];</span>
 
       // set up zzAction for empty match case:
-<span class="nc" id="L849">      int zzAttributes = zzAttrL[zzState];</span>
-<span class="nc bnc" id="L850" title="All 2 branches missed.">      if ( (zzAttributes &amp; 1) == 1 ) {</span>
+<span class="fc" id="L849">      int zzAttributes = zzAttrL[zzState];</span>
+<span class="pc bpc" id="L850" title="1 of 2 branches missed.">      if ( (zzAttributes &amp; 1) == 1 ) {</span>
 <span class="nc" id="L851">        zzAction = zzState;</span>
       }
 
@@ -855,58 +855,58 @@ public class GeneratedScanner {
       zzForAction: {
         while (true) {
 
-<span class="nc bnc" id="L858" title="All 2 branches missed.">          if (zzCurrentPosL &lt; zzEndReadL) {</span>
-<span class="nc" id="L859">            zzInput = Character.codePointAt(zzBufferL, zzCurrentPosL, zzEndReadL);</span>
-<span class="nc" id="L860">            zzCurrentPosL += Character.charCount(zzInput);</span>
+<span class="fc bfc" id="L858" title="All 2 branches covered.">          if (zzCurrentPosL &lt; zzEndReadL) {</span>
+<span class="fc" id="L859">            zzInput = Character.codePointAt(zzBufferL, zzCurrentPosL, zzEndReadL);</span>
+<span class="fc" id="L860">            zzCurrentPosL += Character.charCount(zzInput);</span>
           }
-<span class="nc bnc" id="L862" title="All 2 branches missed.">          else if (zzAtEOF) {</span>
+<span class="pc bpc" id="L862" title="1 of 2 branches missed.">          else if (zzAtEOF) {</span>
 <span class="nc" id="L863">            zzInput = YYEOF;</span>
 <span class="nc" id="L864">            break zzForAction;</span>
           }
           else {
             // store back cached positions
-<span class="nc" id="L868">            zzCurrentPos  = zzCurrentPosL;</span>
-<span class="nc" id="L869">            zzMarkedPos   = zzMarkedPosL;</span>
-<span class="nc" id="L870">            boolean eof = zzRefill();</span>
+<span class="fc" id="L868">            zzCurrentPos  = zzCurrentPosL;</span>
+<span class="fc" id="L869">            zzMarkedPos   = zzMarkedPosL;</span>
+<span class="fc" id="L870">            boolean eof = zzRefill();</span>
             // get translated positions and possibly new buffer
-<span class="nc" id="L872">            zzCurrentPosL  = zzCurrentPos;</span>
-<span class="nc" id="L873">            zzMarkedPosL   = zzMarkedPos;</span>
-<span class="nc" id="L874">            zzBufferL      = zzBuffer;</span>
-<span class="nc" id="L875">            zzEndReadL     = zzEndRead;</span>
-<span class="nc bnc" id="L876" title="All 2 branches missed.">            if (eof) {</span>
-<span class="nc" id="L877">              zzInput = YYEOF;</span>
-<span class="nc" id="L878">              break zzForAction;</span>
+<span class="fc" id="L872">            zzCurrentPosL  = zzCurrentPos;</span>
+<span class="fc" id="L873">            zzMarkedPosL   = zzMarkedPos;</span>
+<span class="fc" id="L874">            zzBufferL      = zzBuffer;</span>
+<span class="fc" id="L875">            zzEndReadL     = zzEndRead;</span>
+<span class="fc bfc" id="L876" title="All 2 branches covered.">            if (eof) {</span>
+<span class="fc" id="L877">              zzInput = YYEOF;</span>
+<span class="fc" id="L878">              break zzForAction;</span>
             }
             else {
-<span class="nc" id="L881">              zzInput = Character.codePointAt(zzBufferL, zzCurrentPosL, zzEndReadL);</span>
-<span class="nc" id="L882">              zzCurrentPosL += Character.charCount(zzInput);</span>
+<span class="fc" id="L881">              zzInput = Character.codePointAt(zzBufferL, zzCurrentPosL, zzEndReadL);</span>
+<span class="fc" id="L882">              zzCurrentPosL += Character.charCount(zzInput);</span>
             }
           }
-<span class="nc" id="L885">          int zzNext = zzTransL[ zzRowMapL[zzState] + zzCMap(zzInput) ];</span>
-<span class="nc bnc" id="L886" title="All 2 branches missed.">          if (zzNext == -1) break zzForAction;</span>
-<span class="nc" id="L887">          zzState = zzNext;</span>
+<span class="fc" id="L885">          int zzNext = zzTransL[ zzRowMapL[zzState] + zzCMap(zzInput) ];</span>
+<span class="fc bfc" id="L886" title="All 2 branches covered.">          if (zzNext == -1) break zzForAction;</span>
+<span class="fc" id="L887">          zzState = zzNext;</span>
 
-<span class="nc" id="L889">          zzAttributes = zzAttrL[zzState];</span>
-<span class="nc bnc" id="L890" title="All 2 branches missed.">          if ( (zzAttributes &amp; 1) == 1 ) {</span>
-<span class="nc" id="L891">            zzAction = zzState;</span>
-<span class="nc" id="L892">            zzMarkedPosL = zzCurrentPosL;</span>
-<span class="nc bnc" id="L893" title="All 2 branches missed.">            if ( (zzAttributes &amp; 8) == 8 ) break zzForAction;</span>
+<span class="fc" id="L889">          zzAttributes = zzAttrL[zzState];</span>
+<span class="pc bpc" id="L890" title="1 of 2 branches missed.">          if ( (zzAttributes &amp; 1) == 1 ) {</span>
+<span class="fc" id="L891">            zzAction = zzState;</span>
+<span class="fc" id="L892">            zzMarkedPosL = zzCurrentPosL;</span>
+<span class="fc bfc" id="L893" title="All 2 branches covered.">            if ( (zzAttributes &amp; 8) == 8 ) break zzForAction;</span>
           }
 
-<span class="nc" id="L896">        }</span>
+<span class="fc" id="L896">        }</span>
       }
 
       // store back cached position
-<span class="nc" id="L900">      zzMarkedPos = zzMarkedPosL;</span>
+<span class="fc" id="L900">      zzMarkedPos = zzMarkedPosL;</span>
 
-<span class="nc bnc" id="L902" title="All 4 branches missed.">      if (zzInput == YYEOF &amp;&amp; zzStartRead == zzCurrentPos) {</span>
-<span class="nc" id="L903">        zzAtEOF = true;</span>
+<span class="fc bfc" id="L902" title="All 4 branches covered.">      if (zzInput == YYEOF &amp;&amp; zzStartRead == zzCurrentPos) {</span>
+<span class="fc" id="L903">        zzAtEOF = true;</span>
               {
-<span class="nc" id="L905">                return symbol(TokenTypes.EOF);</span>
+<span class="fc" id="L905">                return symbol(TokenTypes.EOF);</span>
               }
       }
       else {
-<span class="nc bnc" id="L909" title="All 10 branches missed.">        switch (zzAction &lt; 0 ? zzAction : ZZ_ACTION[zzAction]) {</span>
+<span class="pc bpc" id="L909" title="6 of 10 branches missed.">        switch (zzAction &lt; 0 ? zzAction : ZZ_ACTION[zzAction]) {</span>
           case 1:
 <span class="nc" id="L911">            { throw new RuntimeException(&quot;Illegal character \&quot;&quot;+yytext()+</span>
                                             &quot;\&quot; at line &quot;+yyline+&quot;, column &quot;+yycolumn);
@@ -917,14 +917,14 @@ public class GeneratedScanner {
             { /* Ignore: don't return anything. */
             }
             // fall through
-<span class="nc" id="L920">          case 6: break;</span>
+<span class="fc" id="L920">          case 6: break;</span>
           case 3:
-<span class="nc" id="L922">            { return symbol(TokenTypes.IDENTIFIER, yytext());</span>
+<span class="fc" id="L922">            { return symbol(TokenTypes.IDENTIFIER, yytext());</span>
             }
             // fall through
 <span class="nc" id="L925">          case 7: break;</span>
           case 4:
-<span class="nc" id="L927">            { return symbol(TokenTypes.INTEGER_LITERAL, yytext());</span>
+<span class="fc" id="L927">            { return symbol(TokenTypes.INTEGER_LITERAL, yytext());</span>
             }
             // fall through
 <span class="nc" id="L930">          case 8: break;</span>
@@ -932,7 +932,7 @@ public class GeneratedScanner {
 <span class="nc" id="L932">            zzScanError(ZZ_NO_MATCH);</span>
         }
       }
-<span class="nc" id="L935">    }</span>
+<span class="fc" id="L935">    }</span>
   }
 
 

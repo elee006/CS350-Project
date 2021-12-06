@@ -11,20 +11,20 @@ public class token {
 
 
     public token(final TokenTypes theType,final int line,final int column)
-<span class="nc" id="L14">    {</span>
-<span class="nc" id="L15">        type = theType;</span>
-<span class="nc" id="L16">        lexeme = &quot;&quot;;</span>
-<span class="nc" id="L17">        line_num = line;</span>
-<span class="nc" id="L18">        column_num = column;</span>
+<span class="fc" id="L14">    {</span>
+<span class="fc" id="L15">        type = theType;</span>
+<span class="fc" id="L16">        lexeme = &quot;&quot;;</span>
+<span class="fc" id="L17">        line_num = line;</span>
+<span class="fc" id="L18">        column_num = column;</span>
 
-<span class="nc" id="L20">    }</span>
-<span class="nc" id="L21">    public token(final TokenTypes theType,final int line,final int column,final String thelexeme){</span>
-<span class="nc" id="L22">        type = theType;</span>
-<span class="nc" id="L23">        column_num = column;</span>
-<span class="nc" id="L24">        line_num = line;</span>
-<span class="nc" id="L25">        lexeme = thelexeme;</span>
+<span class="fc" id="L20">    }</span>
+<span class="fc" id="L21">    public token(final TokenTypes theType,final int line,final int column,final String thelexeme){</span>
+<span class="fc" id="L22">        type = theType;</span>
+<span class="fc" id="L23">        column_num = column;</span>
+<span class="fc" id="L24">        line_num = line;</span>
+<span class="fc" id="L25">        lexeme = thelexeme;</span>
 
-<span class="nc" id="L27">    }</span>
+<span class="fc" id="L27">    }</span>
 
     public int NumofTokens() {
 <span class="nc" id="L30">        int TokenCount = 0;</span>
@@ -36,7 +36,7 @@ public class token {
     }
 
     public final TokenTypes getType() {
-<span class="nc" id="L39">        return type;</span>
+<span class="fc" id="L39">        return type;</span>
     }
 
     public final String getLexeme(){

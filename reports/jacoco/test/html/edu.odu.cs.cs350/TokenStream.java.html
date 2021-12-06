@@ -11,24 +11,24 @@ import java.util.List;
 public class TokenStream implements Iterable&lt;token&gt;{
     private List&lt;token&gt; tokens;
 
-<span class="nc" id="L14">    public TokenStream(final Reader input){</span>
-<span class="nc" id="L15">        tokens = new LinkedList&lt;token&gt;();</span>
-<span class="nc" id="L16">        GeneratedScanner scanner = new GeneratedScanner (input);</span>
+<span class="fc" id="L14">    public TokenStream(final Reader input){</span>
+<span class="fc" id="L15">        tokens = new LinkedList&lt;token&gt;();</span>
+<span class="fc" id="L16">        GeneratedScanner scanner = new GeneratedScanner (input);</span>
         try {
-<span class="nc" id="L18">            token token = scanner.yylex();</span>
-<span class="nc bnc" id="L19" title="All 4 branches missed.">            while (token != null &amp;&amp; token.getType() != TokenTypes.EOF) {</span>
-<span class="nc" id="L20">                tokens.add (token);</span>
-<span class="nc" id="L21">                token = scanner.yylex();</span>
+<span class="fc" id="L18">            token token = scanner.yylex();</span>
+<span class="pc bpc" id="L19" title="1 of 4 branches missed.">            while (token != null &amp;&amp; token.getType() != TokenTypes.EOF) {</span>
+<span class="fc" id="L20">                tokens.add (token);</span>
+<span class="fc" id="L21">                token = scanner.yylex();</span>
             }
 <span class="nc" id="L23">        } catch (IOException ex) {</span>
             // Not necessarily a problem, depending on the input source
-<span class="nc" id="L25">        }</span>
+<span class="fc" id="L25">        }</span>
 
 
-<span class="nc" id="L28">    }</span>
+<span class="fc" id="L28">    }</span>
     @Override
     public final Iterator&lt;token&gt; iterator() {
-<span class="nc" id="L31">        return tokens.iterator();</span>
+<span class="fc" id="L31">        return tokens.iterator();</span>
     }
 
 }
