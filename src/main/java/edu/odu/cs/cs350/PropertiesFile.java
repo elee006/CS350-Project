@@ -77,8 +77,12 @@ public class PropertiesFile {
 		try {
 			filesList.printFiles();
 		} catch (IOException e) {
-			System.out.println("One or more argument files did not exist.");
+			System.out.println("One or more argument files did not exist when trying to print.");
 			throw new IllegalArgumentException("One or more argument files did not exist.");
+		}
+		
+		for ( SourceFile source : filesList ) {
+			System.out.println( source.getPath() );
 		}
 	}
 	

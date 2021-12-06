@@ -131,7 +131,7 @@ public class SourceFilesList extends ArrayList<SourceFile>
 	public void printFiles() throws IOException {
 		for ( SourceFile source : this )
         {
-        	source.printPath();
+        	System.out.println(source.getCanonicalPath());
         }
 	}
 }

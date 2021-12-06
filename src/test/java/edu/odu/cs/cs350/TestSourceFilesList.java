@@ -116,17 +116,17 @@ class TestSourceFilesList {
 		System.setOut(new PrintStream(outputStreamCaptor1));
 		
 		try {
-			System.out.print(fa.getCanonicalPath());
+			System.out.println(fa.getCanonicalPath());
 		} catch (IOException e) {
 			assertTrue(false);
 		}
 		try {
-			System.out.print(fb.getCanonicalPath());
+			System.out.println(fb.getCanonicalPath());
 		} catch (IOException e) {
 			assertTrue(false);
 		}
 		try {
-			System.out.print(fc.getCanonicalPath());
+			System.out.println(fc.getCanonicalPath());
 		} catch (IOException e) {
 			assertTrue(false);
 		}
