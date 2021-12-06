@@ -112,5 +112,5 @@ spotbugsMain {
 spotbugsTest.enabled = false
 
 reportStats {
-    reportsURL = 'https://elee006.github.io/CS350-Project/'
+    reportsURL = 'https://elee006.github.io/CS350-Project/reports/'
 }
