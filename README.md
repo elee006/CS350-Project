@@ -7,3 +7,6 @@ Team W3-1
 
 Shared document design
 https://docs.google.com/document/d/15aml8CYm6hdPsKsg0hfHWbdreXkDoZJPK3Lh-13YUJo/edit?usp=sharing
+
+Reports page
+https://elee006.github.io/CS350-Project/
